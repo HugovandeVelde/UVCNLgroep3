@@ -64,12 +64,12 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Install dependencies 🥑
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js 🍄
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Static HTML export with Next.js 🥯
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Install Dependencies
+        run: npm install  # Pas dit aan op basis van je project
+
+      - name: Build Project
+        run: npm run build  # Pas dit aan op basis van je project
+        
       - name: Upload artifact ⛱️
         uses: actions/upload-pages-artifact@v1
         with:
@@ -86,4 +86,3 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v1
-        
