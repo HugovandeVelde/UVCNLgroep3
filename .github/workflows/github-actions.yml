@@ -4,6 +4,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 Good job!“
+      - run: echo "🎉 Good job!"
       - uses: actions/checkout@v3
       - run: npm ci
