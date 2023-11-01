@@ -28,9 +28,13 @@ jobs:
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git checkout main  # Vervang "main" door de naam van je hoofdbranch
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push
+          git checkout main  # Replace "main" with the name of your main branch
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+          else
+            git add .
+            git commit -m "Deploy to GitHub Pages"
+            git push
+          fi
         env:
           NODE_ENV: production
