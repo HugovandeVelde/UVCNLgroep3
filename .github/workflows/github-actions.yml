@@ -69,12 +69,6 @@ jobs:
 
       - name: Build Project
         run: npm run build  # Pas dit aan op basis van je project
-        
-      - name: Upload artifact ⛱️
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./out
-
   # Deployment job
   deploy:
     environment:
