@@ -1,18 +1,36 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Vervang dit door de naam van je hoofdbranch
+
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install  # Pas dit aan op basis van je project
+
+      - name: Build Project
+        run: npm run build  # Pas dit aan op basis van je project
+
+      - name: Deploy to GitHub Pages
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git checkout main  # Vervang "main" door de naam van je hoofdbranch
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push
+        env:
+          NODE_ENV: production
