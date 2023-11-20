@@ -125,7 +125,7 @@
       <input name="password" type="password" bind:value={password} />
   
       <button type="submit">
-        {#if isLoading}Logging in...{:else}Log in {/if}
+        {#if isLoading}Logging in...{:else}Log in 🔒{/if}
       </button>
   
       {#if Object.keys(errors).length > 0}
