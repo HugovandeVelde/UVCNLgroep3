@@ -97,9 +97,9 @@
       list-style-type: none;
       padding: 10px;
       margin: 0;
-      border: 2px solid #be6283;
-      color: #be6283;
-      background: rgba(190, 98, 131, 0.3);
+      border: 2px solid #4fc90d;
+      color: #0daa7b;
+      background: rgba(51, 156, 13, 0.3);
     }
   
     .success {
