@@ -1,9 +1,9 @@
 <script>
-    // Hier kun je je Svelte-logica plaatsen
+    // Here you can place your Svelte logic
 </script>
 
 <style>
-    /* Stijlen voor je dashboard lay-out */
+    /* Styles for your dashboard layout */
     .dashboard {
         display: flex;
         flex-direction: column;
@@ -39,8 +39,8 @@
     }
 
     .recommended-item {
-        width: 250px; /* Vaste breedte van 250 pixels */
-        height: 250px; /* Vaste hoogte van 250 pixels */
+        width: 250px; /* Fixed width of 250 pixels */
+        height: 250px; /* Fixed height of 250 pixels */
         border: 1px solid #ccc;
         border-radius: 5px;
         text-align: center;
@@ -76,13 +76,13 @@
     }
 
     .logo {
-        width: 450px; /* Aangepaste grootte van het logo */
+        width: 450px; /* Custom size of the logo */
         margin-bottom: 20px;
-        text-align: center; /* Centreren van het logo */
+        text-align: center; /* Centering the logo */
     }
     
     .logo img {
-        max-width: 100%; /* Zorgt ervoor dat het logo binnen de opgegeven breedte blijft */
+        max-width: 100%; /* Keeps the logo within the specified width */
         height: auto;
     }
 
@@ -91,54 +91,54 @@
 <div class="dashboard">
 
     <div class="header">
-    <h1>Welkom terug, (naam)!</h1>
+        <h1>Welcome back, (name)!</h1>
     </div>
     
     <div class="logo">
-        <!-- Voeg hier de URL naar jouw logo in -->
-        <img src="/src/img/logo.png" alt="Ons Logo">
+        <!-- Add the URL to your logo here -->
+        <img src="/src/img/logo.png" alt="Our Logo">
     </div>
 
     <div class="header">
-        <h1>Recepten Zoeken</h1>
-        <button class="search-button">Zoekpagina</button>
+        <h1>Search Recipes</h1>
+        <button class="search-button">Search Page</button>
     </div>
 
     <div class="header">
-        <h1>Aanbevolen Recepten</h1>    
+        <h1>Recommended Recipes</h1>    
     </div>
 
     <div class="recommended">
-        <!-- Horizontaal scrollende aanbevolen gerechten -->
+        <!-- Horizontally scrolling recommended recipes -->
         <div class="recommended-item">
-            <h3>Recept 1</h3>
-            <!-- Meer informatie over aanbevolen recept 1 -->
+            <h3>Recipe 1</h3>
+            <!-- More information about recommended recipe 1 -->
         </div>
         <div class="recommended-item">
-            <h3>Recept 2</h3>
-            <!-- Meer informatie over aanbevolen recept 2 -->
+            <h3>Recipe 2</h3>
+            <!-- More information about recommended recipe 2 -->
         </div>
         <div class="recommended-item">
-            <h3>Recept 3</h3>
-            <!-- Meer informatie over aanbevolen recept 2 -->
+            <h3>Recipe 3</h3>
+            <!-- More information about recommended recipe 3 -->
         </div>
         <div class="recommended-item">
-            <h3>Recept 4</h3>
-            <!-- Meer informatie over aanbevolen recept 2 -->
+            <h3>Recipe 4</h3>
+            <!-- More information about recommended recipe 4 -->
         </div>
         <div class="recommended-item">
-            <h3>Recept 5</h3>
-            <!-- Meer informatie over aanbevolen recept 2 -->
+            <h3>Recipe 5</h3>
+            <!-- More information about recommended recipe 5 -->
         </div>
-        <!-- Voeg hier meer aanbevolen recepten toe -->
+        <!-- Add more recommended recipes here -->
     </div>
 
     <div class="account-buttons">
-        <button class="account-button">Mijn Account</button>
-        <button class="account-button">Geschiedenis</button>
-        <button class="account-button">Vriendenlijst</button>
-        <button class="account-button">Opgeslagen gerechten</button>
+        <button class="account-button">My Account</button>
+        <button class="account-button">History</button>
+        <button class="account-button">Friends List</button>
+        <button class="account-button">Saved Recipes</button>
     </div>
 
-    <!-- Andere secties of componenten voor je dashboard -->
+    <!-- Other sections or components for your dashboard -->
 </div>
