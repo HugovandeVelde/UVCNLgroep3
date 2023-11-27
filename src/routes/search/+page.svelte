@@ -1,25 +1,4 @@
 <script>
-    let products = [
-        {
-            name: "Product 1",
-            pricePerPortion: 2.99,
-            countryOfOrigin: "USA",
-            allergies: ["vegan"],
-            kcal: 150,
-            fat: 5,
-            sugar: 10
-        },
-        {
-            name: "Product 2",
-            pricePerPortion: 4.99,
-            countryOfOrigin: "France",
-            allergies: [],
-            kcal: 200,
-            fat: 8,
-            sugar: 15
-        },
-        // Add more products here...
-    ];
 
     let filteredProducts = products;
 
@@ -217,10 +196,3 @@
     </div>
 </div>
 
-<h2>Filtered Products:</h2>
-
-<ul>
-    {#each filteredProducts as product}
-        <li>{product.name}</li>
-    {/each}
-</ul>
