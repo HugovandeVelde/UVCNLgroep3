@@ -1,7 +1,5 @@
 <script>
 
-    let filteredProducts = products;
-
     let filters = {
         pricePerPortion: 3,
         countryOfOrigin: '',
@@ -57,25 +55,13 @@
     }
 
     input[type="range"],
-    select[multiple] {
+
+    select {
         width: 80%;
         padding: 5px;
         margin-bottom: 10px;
         border-radius: 3px;
         border: 1px solid #ccc;
-    }
-
-    select[multiple] {
-        height: 80px; /* Decreased height for select box */
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    li {
-        margin-bottom: 5px;
     }
 
     /* Styling for the search part of the website */
@@ -124,7 +110,7 @@
     </div>
 
     <div>
-        <label>Origin of Recipe:</label>
+        <label for="countryOfOrigin">Origin of Recipe:</label>
         <div class="radio-options">
             <label for="Italian">
                 <input type="radio" id="Italian" name="countryOfOrigin" value="Italian" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
@@ -153,9 +139,10 @@
             <!-- Add more options here -->
         </div>
     </div>
+    
 
     <div>
-        <label>Allergies/Preferences:</label>
+        <label for="allergies">Allergies/Preferences:</label>
         <div>
             <label for="vegan">
                 <input type="checkbox" id="vegan" bind:group={filters.allergies} value="vegan" on:change={applyFilters} />
@@ -174,8 +161,6 @@
                 Dairy-free
             </label>
         </div>
-        <!-- Add more checkboxes for additional options -->
-    </div>
 
     <div>
         <label for="kcal">Amount of kcal per 100g:</label>
@@ -194,5 +179,6 @@
         <input type="range" id="sugar" min="0" max="50" step="1" bind:value={filters.sugar} on:input={applyFilters} />
         <output>{filters.sugar}</output>
     </div>
+</div>
 </div>
 
