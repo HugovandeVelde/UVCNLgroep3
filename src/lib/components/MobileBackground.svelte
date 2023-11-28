@@ -53,11 +53,30 @@
       border-bottom: 1px solid black; /* Line under the image */
       margin-bottom: 10px; /* Adjust space between image and line */
     }
+    nav {
+  background-color: #087C44;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Set width to 100% for full width */
+  position: sticky; /* Fix the navbar position at the top */
+  bottom: 0;
+  left: 0; /* Align with the left edge */
+  z-index: 1000; /* Set a high z-index to ensure it's above other elements */
+}
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+  }
     }
   </style>
   
   <div class="mobile-bg w-screen h-screen">
-    <h1 class="welcome-text">Welkoom bij Eat'nShare</h1>
+    <h1 class="welcome-text">Welkom bij Eat'nShare</h1>
     
     <!-- Boxes container -->
     <div class="boxes-container">
@@ -82,4 +101,33 @@
         <div class="box-text">Shoarma bowl</div>
       </div>
     </div>
+
+    <!-- <nav class="bg-gray-800 p-4">
+      
+      <div class="container mx-auto flex justify-between items-center">
+        
+        <img src="./src/img/shariqueen.png" alt="Profile Image" />
+    
+        
+        <div class="space-x-4">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            yo mama
+          </button>
+        </div>
+      </div>
+    </nav> -->
+    <nav class="bg-blue-500 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+          <!-- Branding/Logo -->
+          <a href="#" class="text-white text-xl font-bold">My Website</a>
+
+          <!-- Navigation Links -->
+          <div class="space-x-4">
+              <a href="#" class="text-white">Home</a>
+              <a href="#" class="text-white">About</a>
+              <a href="#" class="text-white">Services</a>
+          </div>
+      </div>
+  </nav>
+
   </div>  
