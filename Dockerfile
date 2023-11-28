@@ -3,7 +3,7 @@ WORKDIR /app
 COPY ./package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run dev
 
 FROM node:lts-alpine AS production
 COPY --from=build /app/build .
