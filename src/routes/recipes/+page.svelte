@@ -1,6 +1,6 @@
 <style>
     .test{
-        background-color: ;
+        background-color: blue;
     }
 </style>
 <div class='test'>
