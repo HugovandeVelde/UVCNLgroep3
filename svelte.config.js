@@ -6,7 +6,7 @@ const config = {
  kit: {
   adapter: adapter()
  },
- preprocess: vitePreprocess()
+ preprocess: vitePreprocess(),
 
  vitePlugin: {
   experimental: {
