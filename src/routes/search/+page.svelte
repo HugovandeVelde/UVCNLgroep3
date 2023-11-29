@@ -89,13 +89,6 @@
         margin-bottom: 8px;
     }
 
-    .dot {
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: #555;
-        margin-right: 8px;
-    }
 
     /* Additional styles can be added as per preference */
 </style>
@@ -114,27 +107,27 @@
         <div class="radio-options">
             <label for="Italian">
                 <input type="radio" id="Italian" name="countryOfOrigin" value="Italian" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
-                <span class="dot"></span> Italian
+                <span ></span> Italian
             </label>
             <label for="French">
                 <input type="radio" id="French" name="countryOfOrigin" value="French" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
-                <span class="dot"></span> French
+                <span ></span> French
             </label>
             <label for="Asian">
                 <input type="radio" id="Asian" name="countryOfOrigin" value="Asian" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
-                <span class="dot"></span> Asian
+                <span ></span> Asian
             </label>
             <label for="Spanish">
                 <input type="radio" id="Spanish" name="countryOfOrigin" value="Spanish" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
-                <span class="dot"></span> Spanish
+                <span ></span> Spanish
             </label>
             <label for="American">
                 <input type="radio" id="American" name="countryOfOrigin" value="American" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
-                <span class="dot"></span> American
+                <span ></span> American
             </label>
             <label for="Dutch">
                 <input type="radio" id="Dutch" name="countryOfOrigin" value="Dutch" bind:group={filters.countryOfOrigin} on:change={applyFilters} />
-                <span class="dot"></span> Dutch
+                <span ></span> Dutch
             </label>
             <!-- Add more options here -->
         </div>
@@ -159,6 +152,30 @@
             <label for="dairy-free">
                 <input type="checkbox" id="dairy-free" bind:group={filters.allergies} value="dairy-free" on:change={applyFilters} />
                 Dairy-free
+            </label>
+        </div>
+        <div>
+            <label for="nut-free">
+                <input type="checkbox" id="nut-free" bind:group={filters.allergies} value="nut-free" on:change={applyFilters} />
+                Nut-free
+            </label>
+        </div>
+        <div>
+            <label for="wheat-free">
+                <input type="checkbox" id="wheat-free" bind:group={filters.allergies} value="wheat-free" on:change={applyFilters} />
+                Wheat-free
+            </label>
+        </div>
+        <div>
+            <label for="soy-free">
+                <input type="checkbox" id="soy-free" bind:group={filters.allergies} value="soy-free" on:change={applyFilters} />
+                Soy-free
+            </label>
+        </div>
+        <div>
+            <label for="fish-free">
+                <input type="checkbox" id="fish-free" bind:group={filters.allergies} value="fish-free" on:change={applyFilters} />
+                Fish-free
             </label>
         </div>
 
