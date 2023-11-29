@@ -2,6 +2,8 @@
 <script>
     let username = "User123";
     let email = "user@example.com";
+    import BottomBar from '../../lib/components/BottomBar.svelte';
+    let userProfilePicture = "./src/img/kipTeriyaki.png";
 </script>
 
 <div
@@ -11,7 +13,7 @@
 <div class="flex justify-center items-center h-screen">
     <div class="text-center">
         <div class="absolute left-4 top-4">
-            <button onclick="history.back()">
+            <button onclick="history.back()">Go Back
                 <!-- SVG Arrow Icon -->
                 <svg
                     class="w-6 h-6 inline-block"
@@ -39,7 +41,7 @@
 
 
             <!-- Account Information -->
-            <div class="mb-8">
+            <div class="mb-4">
                 <p>
                     Username: <span class="font-medium" id="username"
                         >{username}</span
@@ -80,13 +82,15 @@
                 <a href="#" class="bg-gray-200 p-4 rounded-md text-center block">
                     Feedback
                 </a>
-                <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
-                    Logout
-                </button>
+                <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded absolute top-4 right-4 z-10">
+    Logout
+  </button>
             </div>
         </div>
     </div>
 </div>
+
+    <BottomBar profilePictureUrl={userProfilePicture} />
 
 <style>
     /* Include Tailwind CSS classes */
