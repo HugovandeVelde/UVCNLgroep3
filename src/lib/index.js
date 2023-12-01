@@ -1,8 +1,8 @@
 let data = "niks";
-let thing = "";
-async function fetchData(id) {
+let requestedData = "";
+async function fetchData(id, table) {
   try {
-    const response = await fetch("http://localhost:4000/recipes");
+    const response = await fetch("http://localhost:4001/" + table);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -11,7 +11,7 @@ async function fetchData(id) {
     data = await response.json();
 
     // Verwerk de ontvangen data
-    if(id === !'all'){
+    if(id !=='all'){
         getUserData(id-1);
     } else {
          getAllUserData()
@@ -22,11 +22,14 @@ async function fetchData(id) {
   }
 }
 // Roep de functie aan
-fetchData('all');
+fetchData(2, 'recipes');
 function getUserData(id) {
-  console.log(data[id]);
+  requestedData = data[id];
+  console.log(requestedData)
 }
 function getAllUserData(){
-    console.log(data)
+  requestedData = data ;
+    console.log(requestedData)
 }
+export{ requestedData };
 

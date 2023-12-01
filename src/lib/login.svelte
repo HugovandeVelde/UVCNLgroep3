@@ -1,4 +1,6 @@
 <script>
+  import { requestedData } from './index'
+  console.log(requestedData); 
     let email = "";
     let password = "";
   
