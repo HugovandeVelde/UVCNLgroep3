@@ -1,73 +1,88 @@
 <div class="mobile-bg w-screen h-screen">
-  <h1 class="welcome-text">Welkom bij Eat'nShare</h1>
+  <h1 class="welcome-text"><strong>Welkom bij Eat'nShare</strong></h1>
+  <h2 class="populair-text"><strong>Populair</strong></h2>
 
   <!-- Boxes container -->
-  <div class="boxes-container">
+  <div class="boxes-container-popular">
     <!-- Box 1 -->
     <div class="box">
-      <img src="./src/img/pastaPesto.png" alt="Image 1" />
-      <div class="line"></div>
+      <img src="./src/img/pastaPesto.png" alt="pastaPesto" />
+      <div class="line" />
       <div class="box-text">Pasta pesto</div>
     </div>
 
     <!-- Box 2 -->
     <div class="box">
-      <img src="./src/img/kipTeriyaki.png" alt="Image 2" />
-      <div class="line"></div>
+      <img src="./src/img/kipTeriyaki.png" alt="KipTeriyaki" />
+      <div class="line" />
       <div class="box-text">Kip teriyaki</div>
     </div>
 
     <!-- Box 3 -->
     <div class="box">
-      <img src="./src/img/shoarmaBowl.png" alt="Image 3" />
-      <div class="line"></div>
+      <img src="./src/img/shoarmaBowl.png" alt="shoarmaBowl" />
+      <div class="line" />
       <div class="box-text">Shoarma bowl</div>
     </div>
   </div>
+  <h2 class="recepten-text"><strong>Recepten</strong></h2>
 
-  <!-- <nav class="bg-gray-800 p-4">
-      
-      <div class="container mx-auto flex justify-between items-center">
-        
-        <img src="./src/img/shariqueen.png" alt="Profile Image" />
-    
-        
-        <div class="space-x-4">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            yo mama
-          </button>
-        </div>
-      </div>
-    </nav> -->
-  <nav class="bg-blue-500 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <!-- Branding/Logo -->
-      <a href="#" class="text-white text-xl font-bold">My Website</a>
-
-      <!-- Navigation Links -->
-      <div class="space-x-4">
-        <a href="#" class="text-white">Home</a>
-        <a href="#" class="text-white">About</a>
-        <a href="#" class="text-white">Services</a>
-      </div>
+  <div class="boxes-container-recipes">
+    <div class="box">
+      <img src="./src/img/kipTeriyaki.png" alt="kipTeriyake2" />
+      <div class="line" />
+      <div class="box-text">Kip teriyaki</div>
     </div>
-  </nav>
+    <div class="box">
+      <img src="./src/img/kipTeriyaki.png" alt="ja" />
+      <div class="line" />
+      <div class="box-text">Kip teriyaki</div>
+    </div>
+    <div class="box">
+      <img src="./src/img/kipTeriyaki.png" alt="nee" />
+      <div class="line" />
+      <div class="box-text">Kip teriyaki</div>
+    </div>
+  </div>
+  <div class="flex gap-4">
+    <a href="http://localhost:5173/register" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Register</a> 
+    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Login</button>
+  </div>
 </div>
-
-<!-- YourComponent.svelte -->
 
 <style>
   /* Add TailwindCSS classes */
   /* For mobile screens */
   @media (max-width: 640px) {
     .mobile-bg {
-     
+      background-image: url('./src/img/background.png'); /* Light green color */
+      /* You can customize this color by changing the hex code */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px; /* Adjust this padding as needed */
     }
     .welcome-text {
       /* Style for the welcome text */
       font-size: 24px;
       text-align: center;
       margin-bottom: 20px; /* Adjust space between text and boxes */
+    }
+    .populair-text {
+      font-size: 20px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .recepten-text {
+      font-size: 20px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .boxes-container-popular {
+      /* New class for the container holding the boxes */
+      display: flex;
+      justify-content: space-around; /* Adjust alignment of boxes */
+      width: 100%; /* Take full width */
     }
     .box {
       /* Style for the boxes */
@@ -98,6 +113,11 @@
       border-bottom: 1px solid black; /* Line under the image */
       margin-bottom: 10px; /* Adjust space between image and line */
     }
+    .boxes-container-recipes {
+      /* New class for the container holding the boxes */
+      display: flex;
+      justify-content: space-around; /* Adjust alignment of boxes */
+      width: 100%; /* Take full width */
+    }
   }
-
-  </style>
+</style>
