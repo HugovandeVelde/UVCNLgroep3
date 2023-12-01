@@ -61,12 +61,7 @@
   /* For mobile screens */
   @media (max-width: 640px) {
     .mobile-bg {
-      background-image: url('./src/img/background.png'); /* Light green color */
-      /* You can customize this color by changing the hex code */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px; /* Adjust this padding as needed */
+     
     }
     .welcome-text {
       /* Style for the welcome text */
