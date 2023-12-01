@@ -55,14 +55,8 @@ function navigateToAnotherPage() {
     /* Add TailwindCSS classes */
     /* For mobile screens */
     @media (max-width: 640px) {
-      .mobile-bg {
-        background-color: #b9f6ca; /* Light green color */
-        /* You can customize this color by changing the hex code */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px; /* Adjust this padding as needed */
-      }
+   
+    
       .welcome-text {
         /* Style for the welcome text */
         font-size: 24px;
@@ -108,7 +102,7 @@ function navigateToAnotherPage() {
   
     main {
       text-align: center;
-      padding: 20px;
+      padding: 0px;
     }
   
     button {
@@ -116,24 +110,6 @@ function navigateToAnotherPage() {
       padding: 10px 20px;
       margin-top: 20px;
       cursor: pointer;
-    }
-  
-    ul {
-      list-style: none;
-      width: 100%;
-      margin-left: 30px;
-      font-style: normal;
-      font-weight: 400;
-      
-      line-height: 29px;
-  
-      color: #000000;
-  
-    }
-  
-    li {
-      margin-bottom: 10px;
-      margin-right: 20px;
     }
   
     label {
@@ -163,9 +139,24 @@ function navigateToAnotherPage() {
 
     margin-left: 0px;
     }
+
+    body {
+            margin: 0;
+        }
+
+    .title h3 {
+      font-size: 1.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    }
+
+  
   </style>
   <main>
   
+    <div class="bg-cover bg-center"
+    style="background-image: url('./src/img/background.png')">
+      
+
   <div class="mobile-bg w-screen h-screen">
     <h1 class="welcome-text">Pasta Pesto</h1>
     
@@ -178,8 +169,10 @@ function navigateToAnotherPage() {
        
       </div>
     </div>
-  
-    <h1>Bereidingswijze</h1>
+    	<div class="title">
+    <h3>Bereidingswijze</h3>
+      </div>
+
     <div class="steps">
     <h3>{steps[currentStep]}</h3>
     </div>
@@ -225,5 +218,6 @@ function navigateToAnotherPage() {
       </div> 
   </nav> -->
   </div>  
+  </div>
   <RecipeJavascript />
   </main>

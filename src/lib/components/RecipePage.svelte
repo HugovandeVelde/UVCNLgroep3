@@ -36,14 +36,7 @@ function navigateToAnotherPage() {
   /* Add TailwindCSS classes */
   /* For mobile screens */
   @media (max-width: 640px) {
-    .mobile-bg {
-      background-color: #b9f6ca; /* Light green color */
-      /* You can customize this color by changing the hex code */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px; /* Adjust this padding as needed */
-    }
+    
     .welcome-text {
       /* Style for the welcome text */
       font-size: 24px;
@@ -110,7 +103,7 @@ function navigateToAnotherPage() {
 
   main {
     text-align: center;
-    padding: 20px;
+    padding: 0px;
   }
 
   button {
@@ -123,7 +116,6 @@ function navigateToAnotherPage() {
   ul {
     list-style: none;
     width: 100%;
-    margin-left: 30px;
     font-style: normal;
     font-weight: 400;
     
@@ -147,9 +139,34 @@ function navigateToAnotherPage() {
     border: 1px solid black;
   }
 
-  
+    .profile-border {
+    border: 2px solid #10B981; /* Use the same color as border-green-500 in Tailwind */
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .profile-image {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 1rem; /* Adjust spacing between image and text */
+  }
+
+  .profile-info {
+    flex-grow: 1; /* Allow the text to take remaining space */
+  }
+
+  .profile-info h3 {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+  }
 </style>
 <main>
+
+  <div class="bg-cover bg-center"
+  style="background-image: url('./src/img/background.png')">
+    
+  
 
 <div class="mobile-bg w-screen h-screen">
   <h1 class="welcome-text">Pasta Pesto</h1>
@@ -163,7 +180,31 @@ function navigateToAnotherPage() {
      
     </div>
   </div>
+
+  <div class="profile-border">
+    <!-- Profile Image -->
+    <img src="src\img\shariqueen.png" alt="Profile Image" class="profile-image" />
+
+    <!-- Profile Info -->
+    <div class="profile-info">
+        <h3>Shariqueen</h3>
+        <p>Hi, I'm Shariqueen, the Pasta Pesto Enthusiast! 🍝✨
+            I love pasta. </p>
+    </div>
+</div>
  
+     <!-- <div class="dish-description mb-8">
+      <h2 class="text-xl font-semibold mb-2">Dish Description</h2>
+      <p class="text-gray-700">{recipe.description}</p>
+    </div>
+
+    <div class="poster-info flex items-center">
+      <img src={recipe.posterImage} alt="Poster Image" class="rounded-full w-12 h-12 mr-4" />
+      <div>
+        <h3 class="text-lg font-semibold">{recipe.posterName}</h3> -->
+
+
+
   <h2>Needed ingredients:</h2>
   <!-- YourComponent.svelte -->
 <ul>
@@ -205,5 +246,6 @@ function navigateToAnotherPage() {
 
 
 </div>  
+</div>
 <RecipeJavascript />
 </main>
