@@ -15,28 +15,28 @@ async function fetchData(table, id) {
 
     // Verwerk de ontvangen data
     if(id !=='all'){
-        getRecipeData(id-1);
-        // getRecipeData(id-1);
+        getUserData(id-1);
     } else {
-         getAllRecipeData()
-        //  getAllRecipeData();
+         getAllUserData()
     }
   } catch (error) {
     // Handel fouten af
     console.error("Fetch error:", error);
   }
 }
-fetchData('recipes', 2);
-function getRecipeData(id) {
-  requestedRecipeData = data[id];
-  // console.log(requestedRecipeData)
+// Roep de functie aan
+fetchData('users', 2);
+function getUserData(id) {
+  requestedData = data[id];
+  // console.log(requestedData)
 }
-fetchData('recipes', 'all');
-function getAllRecipeData(){
-  requestedAllRecipeData = data ;
-    // console.log(requestedAllRecipeData)
+fetchData('users', 'all');
+function getAllUserData(){
+  requestedAllData = data ;
+    console.log(requestedAllData)
 }
-export{ requestedRecipeData };
-export{ requestedAllRecipeData };
+export{ requestedData };
+export{ requestedAllData };
+
 
 

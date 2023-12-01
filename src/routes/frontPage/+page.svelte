@@ -1,7 +1,9 @@
 <script>
     import BottomBar from '../../lib/components/BottomBar.svelte';
-    import { requestedData } from '../../lib/index'
-    console.log(requestedData);
+    import { requestedRecipeData } from '../../lib/index'
+    import { requestedAllRecipeData } from '../../lib/index'
+  console.log(requestedRecipeData); 
+  console.log(requestedAllRecipeData); 
   </script>
     <main>
 <div class="mobile-bg w-screen h-screen">
@@ -14,21 +16,21 @@
     <div class="box">
       <img src="./src/img/pastaPesto.png" alt="pastaPesto" />
       <div class="line" />
-      <div class="box-text" id="recipe1"><p>{ requestedData.name }</p></div>
+      <div class="box-text" id="recipe1"><p>{ requestedAllRecipeData[0].name }</p></div>
     </div>
 
     <!-- Box 2 -->
     <div class="box">
       <img src="./src/img/kipTeriyaki.png" alt="KipTeriyaki" />
       <div class="line" />
-      <div class="box-text">Kip teriyaki</div>
+      <div class="box-text">{ requestedAllRecipeData[1].name }</div>
     </div>
 
     <!-- Box 3 -->
     <div class="box">
       <img src="./src/img/shoarmaBowl.png" alt="shoarmaBowl" />
       <div class="line" />
-      <div class="box-text">Shoarma bowl</div>
+      <div class="box-text">{ requestedAllRecipeData[2].name }</div>
     </div>
   </div>
   <h2 class="recepten-text"><strong>Recepten</strong></h2>
@@ -37,17 +39,17 @@
     <div class="box">
       <img src="./src/img/kipTeriyaki.png" alt="kipTeriyake2" />
       <div class="line" />
-      <div class="box-text">Kip teriyaki</div>
+      <div class="box-text">{ requestedAllRecipeData[3].name }</div>
     </div>
     <div class="box">
       <img src="./src/img/kipTeriyaki.png" alt="ja" />
       <div class="line" />
-      <div class="box-text">Kip teriyaki</div>
+      <div class="box-text">{ requestedAllRecipeData[4].name }</div>
     </div>
     <div class="box">
       <img src="./src/img/kipTeriyaki.png" alt="nee" />
       <div class="line" />
-      <div class="box-text">Kip teriyaki</div>
+      <div class="box-text">{ requestedAllRecipeData[5].name }</div>
     </div>
   </div>
   <div class="flex gap-4">
