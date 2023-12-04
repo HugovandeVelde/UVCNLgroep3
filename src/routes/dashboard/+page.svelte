@@ -101,8 +101,11 @@
 
     <div class="header">
         <h1>Search Recipes</h1>
-        <button class="search-button">Search Page</button>
+        <a href="/search">
+            <button class="search-button">Search Page</button>
+        </a>
     </div>
+    
 
     <div class="header">
         <h1>Recommended Recipes</h1>    
@@ -134,7 +137,12 @@
     </div>
 
     <div class="account-buttons">
-        <button class="account-button">My Account</button>
+        <button class="account-button">
+            <a href="/account">
+                My Account
+            </a>
+        </button>
+            
         <button class="account-button">History</button>
         <button class="account-button">Friends List</button>
         <button class="account-button">Saved Recipes</button>
