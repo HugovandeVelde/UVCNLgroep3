@@ -2,10 +2,8 @@
     import BottomBar from '../../lib/components/BottomBar.svelte';
     import { requestedRecipeData } from '../../lib/index'
     import { requestedAllRecipeData } from '../../lib/index'
-    import {currentUserId} from '../login/+page.svelte'
   console.log(requestedRecipeData); 
   console.log(requestedAllRecipeData); 
-  console.log(currentUserId);
   </script>
     <main>
 <div class="mobile-bg w-screen h-screen">
