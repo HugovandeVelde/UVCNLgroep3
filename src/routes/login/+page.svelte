@@ -1,10 +1,10 @@
 <script>
     import { requestedData } from '../../lib/users';
     import { requestedAllData } from '../../lib/users';
-    console.log(requestedAllData);
     let form = { error: null, email: "", password: "" };
     let isSubmitted = false;
-
+    let currentUserId = "";
+    console.log(requestedAllData)
     function handleSubmit(event) {
         event.preventDefault();
         // Console.log om de gegevens in de console weer te geven
@@ -12,6 +12,7 @@
         isSubmitted = true;
     }
 </script>
+
 
 <div class="register flex flex-col justify-center items-center h-screen">
     <h1 class="text-3xl font-bold">Login</h1>
@@ -33,10 +34,12 @@
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Login</button>
     </form>
     {#if isSubmitted}
+        {console.log('isSubmitted')}
         {#each requestedAllData as user}
             <!-- Voeg hier de logica toe die je binnen de loop wilt uitvoeren -->
             {#if user.email === form.email && user.password === form.password && isSubmitted}
-                {window.location.replace("http://localhost:5173/frontPage")}
+                    {window.location.replace("http://localhost:5173/frontPage")}
+                    {console.log('next')}
             {/if}
         {/each}
     {/if}

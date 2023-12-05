@@ -1,4 +1,5 @@
 <script>
+<<<<<<< HEAD
     let form = {}; // Initialize form object to handle form-related data
     let username = '';
     let email = '';
@@ -42,6 +43,15 @@
     }
 }
 
+=======
+    export let form;
+    const newUser = {
+    name: 'test test',
+    email: 'test@example.com',
+    password: 'Test'
+    };
+    export {newUser};
+>>>>>>> 1313d8d83e284fbdf17cb069a1a976d9f3a36908
 </script>
 
 <div class="register flex flex-col justify-center items-center h-screen">
