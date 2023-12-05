@@ -1,21 +1,54 @@
 <script>
-    let form = { error: null, email: "", password: "" };
-    const newUser = {
-        name: '',
-        email: '',
-        password: ''
+    let form = {
+      error: null,
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirm: ""
     };
-    let isSubmitted = false;
-    function handleSubmit(event) {
-        event.preventDefault();
-        // Console.log om de gegevens in de console weer te geven
-        console.log("Formuliergegevens:", form);
-        isSubmitted = true;
+  
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const newUser = {
+        name: form.name,
+        email: form.email,
+        password: form.password
+      };
+  
+      // Post the new user data to the backend
+      await postData('users', newUser);
+  console.log(newUser)
+      // Optionally, reset form fields after successful submission
+      form.name = '';
+      form.email = '';
+      form.password = '';
     }
-    export {newUser}
-</script>
-<form on:submit={handleSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    method="POST" action="/register?/create">
+  
+    async function postData(endpoint, data) {
+      try {
+        const response = await fetch(`http://localhost:4002/${endpoint}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        // Optionally handle the response from the server
+        const result = await response.json();
+        console.log('Data posted:', result);
+      } catch (error) {
+        console.error('Fetch error:', error);
+        // Optionally handle errors here
+      }
+    }
+  </script>
+  
+  <form on:submit={handleSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
     <!-- svelte-ignore missing-declaration -->
     {#if form?.error}
@@ -43,5 +76,5 @@
             <input class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" type="password" id="passwordConfirm" placeholder="**********" required/>
         </div>
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</button>
-    </form>
+</form>
     
