@@ -1,11 +1,52 @@
 <script>
-    export let form;
+    let form = {}; // Initialize form object to handle form-related data
+    let username = '';
+    let email = '';
+    let password = '';
+    let passwordConfirm = '';
+    let error = '';
+
+    async function handleSubmit(event) {
+    event.preventDefault();
+
+    const userData = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    try {
+        const response = await fetch('/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (!response.ok) {
+            const errorMessage = await response.json();
+            console.error(errorMessage); // Log the error message for debugging
+            form.error = errorMessage.error || 'Something went wrong';
+        } else {
+            // Clear form fields or show success message upon successful registration
+            username = '';
+            email = '';
+            password = '';
+            passwordConfirm = '';
+            form.error = ''; // Clear any previous error message
+        }
+    } catch (err) {
+        console.error('Error:', err);
+        form.error = 'Something went wrong';
+    }
+}
+
 </script>
 
 <div class="register flex flex-col justify-center items-center h-screen">
     <h1 class="text-3xl font-bold">Register</h1>
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    method="POST" action="/register?/create">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" on:submit={handleSubmit}>
 
     {#if form?.error}
     <div
@@ -32,5 +73,5 @@
             <input class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" type="password" id="passwordConfirm" placeholder="**********" required/>
         </div>
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</button>
-    </form>
+</form>
 </div>
