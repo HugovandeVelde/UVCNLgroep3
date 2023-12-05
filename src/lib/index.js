@@ -3,6 +3,7 @@ let requestedData = "";
 let requestedAllData = "";
 let requestedRecipeData = "";
 let requestedAllRecipeData = "";
+
 async function fetchData(table, id) {
   try {
     const response = await fetch("http://localhost:4002/" + table);
