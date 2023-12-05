@@ -1,5 +1,11 @@
 <script>
     export let form;
+    const newUser = {
+    name: 'test test',
+    email: 'test@example.com',
+    password: 'Test'
+    };
+    export {newUser};
 </script>
 
 <div class="register flex flex-col justify-center items-center h-screen">
