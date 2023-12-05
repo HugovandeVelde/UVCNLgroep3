@@ -6,17 +6,21 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"start": "export PORT=8080 && node ./build"
+		"start": "export PORT=8080 && node ./build",
+		"build:css": "npx postcss styles.css -o output.css"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-node": "^1.3.1",
 		"@sveltejs/kit": "^1.20.4",
+		"postcss": "^8.4.32",
 		"svelte": "^4.0.5",
 		"vite": "^4.4.2"
 	},
 	"type": "module",
 	"dependencies": {
-		"dotenv": "^16.3.1"
+		"autoprefixer": "^10.4.16",
+		"dotenv": "^16.3.1",
+		"tailwindcss": "^3.3.6"
 	}
 }
