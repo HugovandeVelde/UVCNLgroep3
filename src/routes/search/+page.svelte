@@ -87,10 +87,13 @@
                         step="0.1"
                         class="w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none"
                         bind:value={filters.pricePerPortion}
-                        on:input={applyFilters}
+                        on:change={applyFilters}
                     />
                     <output>{filters.pricePerPortion}</output>
                 </div>
+                
+                <!-- Repeat the same structure for other sliders (kcal, fat, sugar) -->
+                
 
                 <div class="mb-4">
                     <label for="countryOfOrigin">Origin of Recipe:</label>
