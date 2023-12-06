@@ -38,8 +38,8 @@
 }
 
 .recommended-item {
-        width: 250px; /* Fixed width of 250 pixels */
-        height: 250px; /* Fixed height of 250 pixels */
+        width: 150px; /* Fixed width of 250 pixels */
+        height: 150px; /* Fixed height of 250 pixels */
         border: 1px solid #ccc;
         border-radius: 5px;
         text-align: center;
