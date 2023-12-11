@@ -1,4 +1,5 @@
 <script>
+    import {requestedAllData} from '../users'
     let form = {
       error: null,
       name: "",
@@ -6,7 +7,6 @@
       password: "",
       passwordConfirm: ""
     };
-  
     async function handleSubmit(event) {
   event.preventDefault();
 
@@ -20,6 +20,7 @@
     email: form.email,
     password: form.password
   };
+  console.log(requestedAllData.length)
   {window.location.replace("http://localhost:5173/dashboard")}
 
   try {
