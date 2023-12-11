@@ -1,18 +1,26 @@
 <script>
     import { page } from '$app/stores';
     import { requestedAllRecipeData } from '../../../lib/index';
-    let recipeId = +$page.params.recipeId;
+    import { requestedAllIngredients } from '../../../lib/ingredients.js'
+    console.log(requestedAllIngredients)
+    let checkRecipeId = +$page.params.recipeId;
     let recipeName = ''
     requestedAllRecipeData.forEach(recipes => {
-        if(recipes.id === +recipeId) {
+        if(recipes.id === +checkRecipeId) {
             recipeName = recipes.name
         }
     });
+    let results= [];
+    requestedAllIngredients.forEach(ingredient => {
+        if (ingredient.RecipeId === +checkRecipeId){
+            results.push(ingredient.Hoeveelheid + ' ' + ingredient.IngredientName );
+        }
+    });
+    console.log(results)
 </script>
 <main>
 
-    <div class="bg-cover bg-center"
-    style="background-image: url('./src/img/background.png')">
+    <div class="bg-cover bg-center">
       
     
   
@@ -23,7 +31,6 @@
     <div class="boxes-container">
       <!-- Box 1 -->
       <div class="box">
-        <img src="./src/img/pastaPesto.png" alt="Image 1" />
         
        
       </div>
@@ -31,7 +38,6 @@
   
     <div class="profile-border">
       <!-- Profile Image -->
-      <img src="src\img\shariqueen.png" alt="Profile Image" class="profile-image" />
   
       <!-- Profile Info -->
       <div class="profile-info">
@@ -56,30 +62,12 @@
     <h2>Needed ingredients:</h2>
     <!-- YourComponent.svelte -->
   <ul>
+    {#each results as ingredient}
     <li>
         <input type="checkbox" id="spaghetti">
-        <label for="spaghetti">450 g spaghetti</label>
+        <label for="spaghetti">{ingredient}</label>
     </li>
-    <li>
-        <input type="checkbox" id="pijnboompitten">
-        <label for="pijnboompitten">3 el pijnboompitten</label>
-    </li>
-    <li>
-        <input type="checkbox" id="ParmigianoReggiano">
-        <label for="ParmigianoReggiano">37.5 g Parmigiano Reggiano</label>
-    </li>
-    <li>
-        <input type="checkbox" id="teenknoflook">
-        <label for="teenknoflook">1½ teenknoflook</label>
-    </li>
-    <li>
-        <input type="checkbox" id="versebasilicum">
-        <label for="versebasilicum">45 g verse basilicum</label>
-    </li>
-    <li>
-        <input type="checkbox" id="olijfolieextravierge">
-        <label for="olijfolieextravierge">9 el olijfolie extra vierge</label>
-    </li>
+    {/each}
   </ul>
   
   <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={navigateToAnotherPage}>Ga naar de Bereidingswijze</button>
