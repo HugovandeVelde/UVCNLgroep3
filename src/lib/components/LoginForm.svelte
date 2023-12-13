@@ -1,4 +1,5 @@
 <script>
+    import {requestedAllData} from '../users'
     let form = {
       error: null,
       name: "",
@@ -6,7 +7,6 @@
       password: "",
       passwordConfirm: ""
     };
-  
     async function handleSubmit(event) {
   event.preventDefault();
 
@@ -20,6 +20,7 @@
     email: form.email,
     password: form.password
   };
+  console.log(requestedAllData.length)
   {window.location.replace("http://localhost:5173/dashboard")}
 
   try {
@@ -84,9 +85,10 @@ async function postData(endpoint, data) {
     {#if form?.error}
     <div
       class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-      role="alert">
+      role="alert"
+    >
       <strong class="font-bold">Error!</strong>
-      <span class="block sm:inline">{form.error}</span> 
+      <span class="block sm:inline">{form.error}</span>
     </div>
     {/if}
         <div class="mb-4">
@@ -102,8 +104,9 @@ async function postData(endpoint, data) {
             <input bind:value={form.password} class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" type="password" id="password" placeholder="**********" required/>
         </div>
         <div class="mb-4">
-            <label for="passwordConfirm" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
-            <input bind:value={form.passwordConfirm} class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" type="password" id="passwordConfirm" placeholder="**********" required/>
-          </div>
-          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</button>
-        </form>
+            <label for="passwordConfirm" class="block text-gray-700 text-sm font-bold mb-2">password Confirm</label>
+            <input class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" type="password" id="passwordConfirm" placeholder="**********" required/>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</button>
+</form>
+    
