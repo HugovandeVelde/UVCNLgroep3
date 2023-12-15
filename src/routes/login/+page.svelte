@@ -1,17 +1,14 @@
 <script>
-    import { requestedData } from '../../lib/users';
     import { requestedAllData } from '../../lib/users';
     let form = { error: null, email: "", password: "" };
     let isSubmitted = false;
-    let currentUserId = "";
-    console.log(requestedAllData)
+    console.log(requestedAllData + 'hi')
     function handleSubmit(event) {
         event.preventDefault();
         // Console.log om de gegevens in de console weer te geven
         console.log("Formuliergegevens:", form);
         isSubmitted = true;
     }
-    let test = ''
 </script>
 
 
@@ -38,9 +35,9 @@
         {console.log('isSubmitted')}
         {#each requestedAllData as user}
             <!-- Voeg hier de logica toe die je binnen de loop wilt uitvoeren -->
+            {console.log(user.email + user.password + form.email + form.password)}
             {#if user.email === form.email && user.password === form.password && isSubmitted}
-                    {window.location.replace("http://localhost:5173/frontPage")}
-                    {console.log('next')}
+                    {window.location.replace("http://localhost:5173/dashboard")}
             {/if}
         {/each}
     {/if}

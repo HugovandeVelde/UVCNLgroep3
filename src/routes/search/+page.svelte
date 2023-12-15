@@ -88,7 +88,16 @@
         align-items: center;
         margin-bottom: 8px;
     }
-
+    .search-button {
+        padding: 15px 25px;
+        font-size: 16px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
 
     /* Additional styles can be added as per preference */
 </style>
@@ -197,5 +206,7 @@
         <output>{filters.sugar}</output>
     </div>
 </div>
+<a href='http://localhost:5173/search' class="search-button">Continiue</a>
 </div>
+
 

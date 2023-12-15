@@ -25,6 +25,3 @@ function getAllIngredients(){
   requestedAllIngredients = data ;
 }
 export{ requestedAllIngredients };
-
-
-

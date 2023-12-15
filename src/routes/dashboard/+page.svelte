@@ -1,5 +1,8 @@
 <script>
-    // Here you can place your Svelte logic
+  import BottomBar from "../../lib/components/BottomBar.svelte";
+    import { requestedAllData } from '../../lib/users';
+    import { requestedAllRecipeData } from '../../lib/index';
+    console.log(requestedAllData)
 </script>
 
 <style>
@@ -101,7 +104,11 @@
 
     <div class="header">
         <h1>Search Recipes</h1>
-        <button class="search-button">Search Page</button>
+        <br>
+        <a href='http://localhost:5173/search' class="search-button">Search Page</a>
+        <br>
+        <br>
+        <!-- <button class="search-button">Search Page</button> -->
     </div>
 
     <div class="header">
@@ -111,23 +118,23 @@
     <div class="recommended">
         <!-- Horizontally scrolling recommended recipes -->
         <div class="recommended-item">
-            <h3>Recipe 1</h3>
+            <h3>{requestedAllRecipeData[1].name}</h3>
             <!-- More information about recommended recipe 1 -->
         </div>
         <div class="recommended-item">
-            <h3>Recipe 2</h3>
+            <h3>{requestedAllRecipeData[2].name}</h3>
             <!-- More information about recommended recipe 2 -->
         </div>
         <div class="recommended-item">
-            <h3>Recipe 3</h3>
+            <h3>{requestedAllRecipeData[3].name}</h3>
             <!-- More information about recommended recipe 3 -->
         </div>
         <div class="recommended-item">
-            <h3>Recipe 4</h3>
+            <h3>{requestedAllRecipeData[4].name}</h3>
             <!-- More information about recommended recipe 4 -->
         </div>
         <div class="recommended-item">
-            <h3>Recipe 5</h3>
+            <h3>{requestedAllRecipeData[5].name}</h3>
             <!-- More information about recommended recipe 5 -->
         </div>
         <!-- Add more recommended recipes here -->

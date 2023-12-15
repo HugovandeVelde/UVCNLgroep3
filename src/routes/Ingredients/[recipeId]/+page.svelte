@@ -1,22 +1,20 @@
 <script>
     import { page } from '$app/stores';
     import { requestedAllRecipeData } from '../../../lib/index';
-    import { requestedAllIngredients } from '../../../lib/ingredients.js'
-    console.log(requestedAllIngredients)
+    import { requestedAllIngredients } from '../../../lib/ingredients';
     let checkRecipeId = +$page.params.recipeId;
-    let recipeName = ''
+    let recipeName = '';
     requestedAllRecipeData.forEach(recipes => {
         if(recipes.id === +checkRecipeId) {
             recipeName = recipes.name
         }
-    });
+    }); 
     let results= [];
     requestedAllIngredients.forEach(ingredient => {
         if (ingredient.RecipeId === +checkRecipeId){
             results.push(ingredient.Hoeveelheid + ' ' + ingredient.IngredientName );
         }
     });
-    console.log(results)
 </script>
 <main>
 
