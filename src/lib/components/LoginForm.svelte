@@ -22,7 +22,7 @@
       password: form.password,
     };
     console.log(newUser)
-    // {window.location.replace("http://localhost:5173/dashboard")}
+    {window.location.replace("http://localhost:5173/dashboard")}
 
     try {
       // Post the new user data to the backend
