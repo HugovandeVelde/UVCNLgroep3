@@ -8,42 +8,41 @@
 <style>
     /* Styles for your dashboard layout */
     .dashboard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Add some padding for better spacing */
+    font-family: Arial, sans-serif;
+}
 
-    .header {
-        text-align: center;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
+.header {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
-    .search-button {
-        padding: 15px 25px;
-        font-size: 16px;
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-bottom: 20px;
-    }
+.search-button {
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
 
-    .recommended {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-    }
+.recommended {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-    .recommended-item {
-        width: 250px; /* Fixed width of 250 pixels */
-        height: 250px; /* Fixed height of 250 pixels */
+.recommended-item {
+        width: 150px; /* Fixed width of 250 pixels */
+        height: 150px; /* Fixed height of 250 pixels */
         border: 1px solid #ccc;
         border-radius: 5px;
         text-align: center;
@@ -59,35 +58,38 @@
         margin: 0;
     }
 
-    .account-buttons {
-        display: flex;
-        justify-content: space-around;
-        width: 80%;
-        max-width: 600px;
-        margin-bottom: 20px;
-    }
+.account-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
-    .account-button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #2ecc71;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 10px;
-    }
+.account-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    width: 45%; /* Adjust button width for better spacing */
+    max-width: 200px;
+    text-align: center;
+}
 
-    .logo {
-        width: 450px; /* Custom size of the logo */
-        margin-bottom: 20px;
-        text-align: center; /* Centering the logo */
-    }
-    
-    .logo img {
-        max-width: 100%; /* Keeps the logo within the specified width */
-        height: auto;
-    }
+.logo {
+    width: 100%; /* Adjust logo to fill the container */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
 
 </style>
 
@@ -104,12 +106,11 @@
 
     <div class="header">
         <h1>Search Recipes</h1>
-        <br>
-        <a href='http://localhost:5173/search' class="search-button">Search Page</a>
-        <br>
-        <br>
-        <!-- <button class="search-button">Search Page</button> -->
+        <a href="/search">
+            <button class="search-button">Search Page</button>
+        </a>
     </div>
+    
 
     <div class="header">
         <h1>Recommended Recipes</h1>    
@@ -141,7 +142,12 @@
     </div>
 
     <div class="account-buttons">
-        <button class="account-button">My Account</button>
+        <button class="account-button">
+            <a href="/account">
+                My Account
+            </a>
+        </button>
+            
         <button class="account-button">History</button>
         <button class="account-button">Friends List</button>
         <button class="account-button">Saved Recipes</button>
