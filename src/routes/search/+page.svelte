@@ -156,4 +156,8 @@
         <output>{filters.sugar}</output>
     </div>
 </div>
+
 </div>
+<a href='http://localhost:5173/search' class="search-button">Continiue</a>
+</div>
+
