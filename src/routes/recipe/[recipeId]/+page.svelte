@@ -111,6 +111,8 @@ function navigateToAnotherPage() {
     <div class="profile-info">
         <h3>[recipename]</h3>
         <p>[username]</p>
+        <p>[tijd voor het maken]</p>
+        <p>[voedingswaarden]</p>
     </div>
 </div>
   <h2>[step nr.]</h2>
