@@ -73,19 +73,6 @@ function navigateToAnotherPage() {
     margin-top: 20px;
     cursor: pointer;
   }
-
-  ul {
-    list-style: none;
-    width: 100%;
-    font-style: normal;
-    font-weight: 400;
-    
-    line-height: 29px;
-
-    color: #000000;
-
-  }
-
     .profile-border {
     border: 2px solid #10B981; /* Use the same color as border-green-500 in Tailwind */
     display: flex;
