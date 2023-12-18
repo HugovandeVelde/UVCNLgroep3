@@ -1,0 +1,43 @@
+Label styles 
+    label {
+        display: block;
+        margin-bottom: 2px;
+      }
+
+
+      input[type="range"],
+      select {
+        width: 80%;
+        padding: 3px; 
+        margin-bottom: 8px; 
+        border-radius: 3px;
+        border: 1px solid #ccc;
+      }
+
+   
+      .search-section {
+        background-color: #f5f5f5;
+        padding: 10px; 
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        width: 90%; 
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      .radio-options {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .radio-options label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+      }
