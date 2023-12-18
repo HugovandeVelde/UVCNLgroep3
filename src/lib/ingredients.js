@@ -3,7 +3,7 @@ let requestedAllIngredients = '';
 
 async function fetchData() {
   try {
-    const response = await fetch("http://localhost:4003/ingredients");
+    const response = await fetch("http://localhost:4000/ingredients");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

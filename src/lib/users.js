@@ -5,7 +5,7 @@ let requestedRecipeData = "";
 let requestedAllRecipeData = "";
 async function fetchData(table, id) {
   try {
-    const response = await fetch("http://localhost:4003/" + table);
+    const response = await fetch("http://localhost:4000" + table);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -39,7 +39,7 @@ function getAllUserData(){
 // Functie om data naar de backend te posten
 async function postData(table, newData) {
   try {
-    const response = await fetch(`http://localhost:4003/${table}`, {
+    const response = await fetch(`http://localhost:4000/${table}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

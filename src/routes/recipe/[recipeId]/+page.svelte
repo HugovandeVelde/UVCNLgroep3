@@ -1,8 +1,6 @@
 <!-- YourComponent.svelte -->
 <script>
-  import RecipeJavascript from '../components/RecipeJavascript.svelte';
-import ExternalScript from '../components/RecipeJavascript.svelte';
-
+    
 let steps = [
     "Stap 1: Kook de spaghetti\nBreng een grote pan met water aan de kook.\nVoeg een snufje zout toe aan het kokende water.\nKook de spaghetti volgens de aanwijzingen op de verpakking totdat het beetgaar is.\nGiet de spaghetti af in een vergiet en zet deze opzij.",
     "Stap 2: Rooster de pijnboompitten\nVerhit een koekenpan op middelhoog vuur.\nVoeg de pijnboompitten toe en rooster ze gedurende ongeveer 3 minuten, of tot ze goudbruin zijn.\nHaal de geroosterde pijnboompitten van het vuur en leg ze op een bord om af te koelen.",
@@ -88,20 +86,6 @@ function navigateToAnotherPage() {
 
   }
 
-  li {
-    margin-bottom: 10px;
-    margin-right: 20px;
-  }
-
-  label {
-    color: black;
-  }
-
-  /* Give each checkbox a black outline */
-  input[type="checkbox"] {
-    border: 1px solid black;
-  }
-
     .profile-border {
     border: 2px solid #10B981; /* Use the same color as border-green-500 in Tailwind */
     display: flex;
@@ -119,54 +103,26 @@ function navigateToAnotherPage() {
 </style>
 <main> 
 
-<div class="mobile-bg w-screen h-screen">
-  <h1 class="welcome-text">Pasta Pesto</h1>
-  
-  <!-- Boxes container -->
-  <div class="boxes-container">
-    <!-- Box 1 -->
-    <div class="box">      
-     
-    </div>
-  </div>
-
+<div class="mobile-bg w-screen">
+      </div>
   <div class="profile-border">
     <!-- Profile Image -->
     <!-- Profile Info -->
     <div class="profile-info">
-        <h3>Shariqueen</h3>
-        <p>Hi, I'm Shariqueen, the Pasta Pesto Enthusiast! 🍝✨
-            I love pasta. </p>
+        <h3>[recipename]</h3>
+        <p>[username]</p>
     </div>
 </div>
-  <h2>Needed ingredients:</h2>
+  <h2>[step nr.]</h2>
+  <h3>[step instruction]</h3>
+  <h2>[step nr.]</h2>
+  <h3>[step instruction]</h3>
+  <h2>[step nr.]</h2>
+  <h3>[step instruction]</h3>
+  <h2>[step nr.]</h2>
+  <h3>[step instruction]</h3>
   <!-- YourComponent.svelte -->
-<ul>
-  <li>
-      <input type="checkbox" id="spaghetti">
-      <label for="spaghetti">450 g spaghetti</label>
-  </li>
-  <li>
-      <input type="checkbox" id="pijnboompitten">
-      <label for="pijnboompitten">3 el pijnboompitten</label>
-  </li>
-  <li>
-      <input type="checkbox" id="ParmigianoReggiano">
-      <label for="ParmigianoReggiano">37.5 g Parmigiano Reggiano</label>
-  </li>
-  <li>
-      <input type="checkbox" id="teenknoflook">
-      <label for="teenknoflook">1½ teenknoflook</label>
-  </li>
-  <li>
-      <input type="checkbox" id="versebasilicum">
-      <label for="versebasilicum">45 g verse basilicum</label>
-  </li>
-  <li>
-      <input type="checkbox" id="olijfolieextravierge">
-      <label for="olijfolieextravierge">9 el olijfolie extra vierge</label>
-  </li>
-</ul>
+
 
 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={navigateToAnotherPage}>Ga naar de Bereidingswijze</button>
 
@@ -179,7 +135,4 @@ function navigateToAnotherPage() {
  </div> -->
 
 
-</div>  
-</div>
-<RecipeJavascript />
 </main>
