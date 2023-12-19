@@ -119,7 +119,7 @@
     <div class="recommended">
         <!-- Horizontally scrolling recommended recipes -->
         <div class="recommended-item">
-            <h3>{requestedAllRecipeData[1].name}</h3>
+            <h3>{requestedAllRecipeData[2].name}</h3>
             <!-- More information about recommended recipe 1 -->
         </div>
         <div class="recommended-item">
@@ -147,7 +147,6 @@
                 My Account
             </a>
         </button>
-            
         <button class="account-button">History</button>
         <button class="account-button">Friends List</button>
         <button class="account-button">Saved Recipes</button>

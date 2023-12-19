@@ -67,12 +67,7 @@ function navigateToAnotherPage() {
     padding: 0px;
   }
 
-  button {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
+
     .profile-border {
     border: 2px solid #10B981; /* Use the same color as border-green-500 in Tailwind */
     display: flex;
@@ -102,6 +97,19 @@ function navigateToAnotherPage() {
         <p>[voedingswaarden]</p>
     </div>
 </div>
+ <div >
+    <h2>[Ingredient name] [hoeveelheid]</h2>
+    <br>
+    <h2>[Ingredient name] [hoeveelheid]</h2>
+    <br>
+    <h2>[Ingredient name] [hoeveelheid]</h2>
+    <br>
+    <h2>[Ingredient name] [hoeveelheid]</h2>
+    <br>
+    <h2>[Ingredient name] [hoeveelheid]</h2>
+    <br>
+<div >
+
   <h2>[step nr.]</h2>
   <h3>[step instruction]</h3>
   <h2>[step nr.]</h2>
@@ -112,8 +120,6 @@ function navigateToAnotherPage() {
   <h3>[step instruction]</h3>
   <!-- YourComponent.svelte -->
 
-
-<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={navigateToAnotherPage}>Ga naar de Bereidingswijze</button>
 
 
   <!-- <h1>Bereidingswijze</h1>

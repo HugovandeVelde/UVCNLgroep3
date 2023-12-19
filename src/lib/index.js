@@ -4,9 +4,9 @@ let requestedAllData = "";
 let requestedRecipeData = "";
 let requestedAllRecipeData = "";
 
-async function fetchData(table, id) {
+async function fetchData(id) {
   try {
-    const response = await fetch("http://localhost:4000/" + table);
+    const response = await fetch("http://localhost:4005/recipes");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -27,12 +27,12 @@ async function fetchData(table, id) {
     console.error("Fetch error:", error);
   }
 }
-fetchData('recipes', 2);
+fetchData(2);
 function getRecipeData(id) {
   requestedRecipeData = data[id];
   // console.log(requestedRecipeData)
 }
-fetchData('recipes', 'all');
+fetchData('all');
 function getAllRecipeData(){
   requestedAllRecipeData = data ;
     // console.log(requestedAllRecipeData)
