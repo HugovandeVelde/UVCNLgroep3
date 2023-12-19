@@ -1,3 +1,6 @@
+<div class="flex flex-col items-center justify-center min-h-screen font-sans">
+
+    <div class="text-center text-2xl mb-5">
 <script>
   import BottomBar from "../../lib/components/BottomBar.svelte";
     import { requestedAllData } from '../../lib/users';
@@ -99,24 +102,24 @@
         <h1>Welcome back, (name)!</h1>
     </div>
     
-    <div class="logo">
+    <div class="w-72 mb-8 mx-auto">
         <!-- Add the URL to your logo here -->
-        <img src="/src/img/logo.png" alt="Our Logo">
+        <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto">
     </div>
 
-    <div class="header">
+    <div class="text-center text-xl mb-5">
         <h1>Search Recipes</h1>
         <a href="/search">
             <button class="search-button">Search Page</button>
         </a>
+        <button class="py-3 px-4 text-lg bg-blue-500 text-white rounded cursor-pointer mb-8">Search Page</button>
     </div>
-    
 
     <div class="header">
         <h1>Recommended Recipes</h1>    
     </div>
 
-    <div class="recommended">
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
         <!-- Horizontally scrolling recommended recipes -->
         <div class="recommended-item">
             <h3>{requestedAllRecipeData[2].name}</h3>
@@ -138,7 +141,6 @@
             <h3>{requestedAllRecipeData[5].name}</h3>
             <!-- More information about recommended recipe 5 -->
         </div>
-        <!-- Add more recommended recipes here -->
     </div>
 
     <div class="account-buttons">
