@@ -1,143 +1,50 @@
-<script>
-    // Here you can place your Svelte logic
-</script>
+<div class="flex flex-col items-center justify-center min-h-screen font-sans">
 
-<style>
-    /* Styles for your dashboard layout */
-    .dashboard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-    }
-
-    .header {
-        text-align: center;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .search-button {
-        padding: 15px 25px;
-        font-size: 16px;
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-bottom: 20px;
-    }
-
-    .recommended {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-    }
-
-    .recommended-item {
-        width: 250px; /* Fixed width of 250 pixels */
-        height: 250px; /* Fixed height of 250 pixels */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        text-align: center;
-        box-sizing: border-box;
-        position: relative;
-    }
-
-    .recommended-item h3 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-    }
-
-    .account-buttons {
-        display: flex;
-        justify-content: space-around;
-        width: 80%;
-        max-width: 600px;
-        margin-bottom: 20px;
-    }
-
-    .account-button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #2ecc71;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 10px;
-    }
-
-    .logo {
-        width: 450px; /* Custom size of the logo */
-        margin-bottom: 20px;
-        text-align: center; /* Centering the logo */
-    }
-    
-    .logo img {
-        max-width: 100%; /* Keeps the logo within the specified width */
-        height: auto;
-    }
-
-</style>
-
-<div class="dashboard">
-
-    <div class="header">
+    <div class="text-center text-2xl mb-5">
         <h1>Welcome back, (name)!</h1>
     </div>
     
-    <div class="logo">
+    <div class="w-72 mb-8 mx-auto">
         <!-- Add the URL to your logo here -->
-        <img src="/src/img/logo.png" alt="Our Logo">
+        <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto">
     </div>
 
-    <div class="header">
+    <div class="text-center text-xl mb-5">
         <h1>Search Recipes</h1>
-        <button class="search-button">Search Page</button>
+        <button class="py-3 px-4 text-lg bg-blue-500 text-white rounded cursor-pointer mb-8">Search Page</button>
     </div>
 
-    <div class="header">
+    <div class="text-center text-xl mb-5">
         <h1>Recommended Recipes</h1>    
     </div>
 
-    <div class="recommended">
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
         <!-- Horizontally scrolling recommended recipes -->
-        <div class="recommended-item">
-            <h3>Recipe 1</h3>
-            <!-- More information about recommended recipe 1 -->
-        </div>
-        <div class="recommended-item">
-            <h3>Recipe 2</h3>
-            <!-- More information about recommended recipe 2 -->
-        </div>
-        <div class="recommended-item">
-            <h3>Recipe 3</h3>
-            <!-- More information about recommended recipe 3 -->
-        </div>
-        <div class="recommended-item">
-            <h3>Recipe 4</h3>
-            <!-- More information about recommended recipe 4 -->
-        </div>
-        <div class="recommended-item">
-            <h3>Recipe 5</h3>
-            <!-- More information about recommended recipe 5 -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-6">
+            <div class="bg-white rounded border border-gray-300 text-center relative h-30">
+                <h3 class="py-12">Recipe 1</h3>
+                <!-- More information about recommended recipe 1 -->
+            </div>
         </div>
         <!-- Add more recommended recipes here -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-6">
+            <div class="bg-white rounded border border-gray-300 text-center relative h-30">
+                <h3 class="py-12">Recipe 2</h3>
+                <!-- More information about recommended recipe 2 -->
+            </div>
+        </div>
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-6">
+            <div class="bg-white rounded border border-gray-300 text-center relative h-30">
+                <h3 class="py-12">Recipe 3</h3>
+                <!-- More information about recommended recipe 3 -->
+            </div>
+        </div>
     </div>
 
-    <div class="account-buttons">
-        <button class="account-button">My Account</button>
-        <button class="account-button">History</button>
-        <button class="account-button">Friends List</button>
-        <button class="account-button">Saved Recipes</button>
+    <div class="flex flex-wrap justify-center w-full md:max-w-xl mb-8">
+        <button class="py-2 px-4 text-lg bg-green-500 text-white rounded cursor-pointer m-2">My Account</button>
+        <button class="py-2 px-4 text-lg bg-green-500 text-white rounded cursor-pointer m-2">History</button>
+        <!-- Add more account buttons -->
     </div>
 
     <!-- Other sections or components for your dashboard -->
