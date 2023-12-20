@@ -1,71 +1,70 @@
-<div class="flex flex-col items-center justify-center min-h-screen font-sans">
-
 <script>
-  import BottomBar from "../../lib/components/BottomBar.svelte";
-    import { requestedAllData } from '../../lib/users';
-    import { requestedAllRecipeData } from '../../lib/index';
-    console.log(requestedAllData)
-</script>
-
-
-<div class="dashboard">
-
-    <div class="header">
-        <h1>Welcome back, (name)!</h1>
-    </div>
-    
-    <div class="w-72 mb-8 mx-auto">
-        <!-- Add the URL to your logo here -->
-        <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto">
-    </div>
-
-    <div class="text-center text-xl mb-5">
-        <h1>Search Recipes</h1>
-        <a href="/search">
-            <button class="search-button">Search Page</button>
-        </a>
-        <button class="py-3 px-4 text-lg bg-blue-500 text-white rounded cursor-pointer mb-8">Search Page</button>
-    </div>
-
-    <div class="header">
-        <h1>Recommended Recipes</h1>    
-    </div>
-
-    <div class="flex flex-wrap justify-center gap-4 mb-8">
-        <!-- Horizontally scrolling recommended recipes -->
-        <div class="recommended-item">
-            <h3>{requestedAllRecipeData[2].name}</h3>
+    import BottomBar from "../../lib/components/BottomBar.svelte";
+      import { requestedAllData } from '../../lib/users';
+      import { requestedAllRecipeData } from '../../lib/index';
+      console.log(requestedAllData)
+  </script>
+  
+  <div class="flex flex-col items-center p-5 font-sans">
+  
+      <div class="text-center text-lg mb-2.5">
+          <h1>Welcome back, (name)!</h1>
+      </div>
+      
+      <div class="w-full text-center mb-5">
+          <!-- Add the URL to your logo here -->
+          <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto">
+      </div>
+  
+      <div class="text-center text-lg mb-2.5">
+          <h1>Search Recipes</h1>
+          <a href="/search">
+              <button class="px-6 py-3.5 text-base bg-blue-500 text-white rounded-lg cursor-pointer mb-5">Search Page</button>
+          </a>
+      </div>
+  
+      <div class="text-center text-lg mb-2.5">
+          <h1>Recommended Recipes</h1>    
+      </div>
+  
+      <div class="flex flex-col items-center mb-5">
+    <!-- Row 1 -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
+            <h3>{requestedAllRecipeData[1].name}</h3>
             <!-- More information about recommended recipe 1 -->
         </div>
-        <div class="recommended-item">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[2].name}</h3>
             <!-- More information about recommended recipe 2 -->
         </div>
-        <div class="recommended-item">
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[3].name}</h3>
             <!-- More information about recommended recipe 3 -->
         </div>
-        <div class="recommended-item">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[4].name}</h3>
             <!-- More information about recommended recipe 4 -->
         </div>
-        <div class="recommended-item">
+    </div>
+
+    <!-- Additional rows as needed -->
+    <!-- For odd number of recipes, the last row will have one item -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[5].name}</h3>
             <!-- More information about recommended recipe 5 -->
         </div>
     </div>
-
-    <div class="account-buttons">
-        <button class="account-button">
-            <a href="/account">
-                My Account
-            </a>
-        </button>
-        <button class="account-button">History</button>
-        <button class="account-button">Friends List</button>
-        <button class="account-button">Saved Recipes</button>
-    </div>
-
-    <!-- Other sections or components for your dashboard -->
 </div>
-</div>
+
+  
+     <BottomBar />
+  
+      <!-- Other sections or components for your dashboard -->
+  </div>
+  
