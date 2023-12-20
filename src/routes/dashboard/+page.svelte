@@ -1,6 +1,16 @@
 <div class="flex flex-col items-center justify-center min-h-screen font-sans">
 
-    <div class="text-center text-2xl mb-5">
+<script>
+  import BottomBar from "../../lib/components/BottomBar.svelte";
+    import { requestedAllData } from '../../lib/users';
+    import { requestedAllRecipeData } from '../../lib/index';
+    console.log(requestedAllData)
+</script>
+
+
+<div class="dashboard">
+
+    <div class="header">
         <h1>Welcome back, (name)!</h1>
     </div>
     
@@ -11,41 +21,51 @@
 
     <div class="text-center text-xl mb-5">
         <h1>Search Recipes</h1>
+        <a href="/search">
+            <button class="search-button">Search Page</button>
+        </a>
         <button class="py-3 px-4 text-lg bg-blue-500 text-white rounded cursor-pointer mb-8">Search Page</button>
     </div>
 
-    <div class="text-center text-xl mb-5">
+    <div class="header">
         <h1>Recommended Recipes</h1>    
     </div>
 
     <div class="flex flex-wrap justify-center gap-4 mb-8">
         <!-- Horizontally scrolling recommended recipes -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-6">
-            <div class="bg-white rounded border border-gray-300 text-center relative h-30">
-                <h3 class="py-12">Recipe 1</h3>
-                <!-- More information about recommended recipe 1 -->
-            </div>
+        <div class="recommended-item">
+            <h3>{requestedAllRecipeData[2].name}</h3>
+            <!-- More information about recommended recipe 1 -->
         </div>
-        <!-- Add more recommended recipes here -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-6">
-            <div class="bg-white rounded border border-gray-300 text-center relative h-30">
-                <h3 class="py-12">Recipe 2</h3>
-                <!-- More information about recommended recipe 2 -->
-            </div>
+        <div class="recommended-item">
+            <h3>{requestedAllRecipeData[2].name}</h3>
+            <!-- More information about recommended recipe 2 -->
         </div>
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-6">
-            <div class="bg-white rounded border border-gray-300 text-center relative h-30">
-                <h3 class="py-12">Recipe 3</h3>
-                <!-- More information about recommended recipe 3 -->
-            </div>
+        <div class="recommended-item">
+            <h3>{requestedAllRecipeData[3].name}</h3>
+            <!-- More information about recommended recipe 3 -->
+        </div>
+        <div class="recommended-item">
+            <h3>{requestedAllRecipeData[4].name}</h3>
+            <!-- More information about recommended recipe 4 -->
+        </div>
+        <div class="recommended-item">
+            <h3>{requestedAllRecipeData[5].name}</h3>
+            <!-- More information about recommended recipe 5 -->
         </div>
     </div>
 
-    <div class="flex flex-wrap justify-center w-full md:max-w-xl mb-8">
-        <button class="py-2 px-4 text-lg bg-green-500 text-white rounded cursor-pointer m-2">My Account</button>
-        <button class="py-2 px-4 text-lg bg-green-500 text-white rounded cursor-pointer m-2">History</button>
-        <!-- Add more account buttons -->
+    <div class="account-buttons">
+        <button class="account-button">
+            <a href="/account">
+                My Account
+            </a>
+        </button>
+        <button class="account-button">History</button>
+        <button class="account-button">Friends List</button>
+        <button class="account-button">Saved Recipes</button>
     </div>
 
     <!-- Other sections or components for your dashboard -->
+</div>
 </div>

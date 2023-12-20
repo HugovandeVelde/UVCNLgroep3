@@ -16,7 +16,7 @@
     <div class="box">
       <img src="./src/img/pastaPesto.png" alt="pastaPesto" />
       <div class="line" />
-      <div class="box-text" id="recipe1"><p>{ requestedAllRecipeData[0].name }</p></div>
+      <div class="box-text" id="recipe1"><p>{ requestedAllRecipeData[1].name }</p></div>
     </div>
 
     <!-- Box 2 -->
@@ -54,7 +54,7 @@
   </div>
   <div class="flex gap-4">
     <a href="http://localhost:5173/register" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Register</a> 
-    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Login</button>
+    <a href="http://localhost:5173/login" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Login</a> 
   </div>
 </div>
 

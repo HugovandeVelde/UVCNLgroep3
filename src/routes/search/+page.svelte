@@ -48,49 +48,8 @@
 </script>
 
 <style>
-    /* Basic styling */
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    input[type="range"],
-
-    select {
-        width: 80%;
-        padding: 5px;
-        margin-bottom: 10px;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-    }
-
-    /* Styling for the search part of the website */
-    .search-section {
-        background-color: #f5f5f5; /* Light gray background */
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        width: 20%;
-    }
-
-    h1 {
-        margin-bottom: 20px;
-    }
-
-    .radio-options {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .radio-options label {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-    }
-
-
-    /* Additional styles can be added as per preference */
+    /* Your component-specific styles here */
+    @import './style.css';
 </style>
 
 <div class="search-section">
@@ -197,5 +156,7 @@
         <output>{filters.sugar}</output>
     </div>
 </div>
+<a href="/recipeList">
+    Continue
+</a>
 </div>
-

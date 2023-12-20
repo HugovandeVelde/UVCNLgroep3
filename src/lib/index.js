@@ -3,9 +3,10 @@ let requestedData = "";
 let requestedAllData = "";
 let requestedRecipeData = "";
 let requestedAllRecipeData = "";
+
 async function fetchData(table, id) {
   try {
-    const response = await fetch("http://localhost:4002/" + table);
+    const response = await fetch("http://localhost:4005/" + table);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -14,29 +15,27 @@ async function fetchData(table, id) {
     data = await response.json();
 
     // Verwerk de ontvangen data
-    if(id !=='all'){
-        getRecipeData(id-1);
-        // getRecipeData(id-1);
+    if (id !== "all") {
+      getRecipeData(id - 1);
+      // getRecipeData(id-1);
     } else {
-         getAllRecipeData()
-        //  getAllRecipeData();
+      getAllRecipeData();
+      //  getAllRecipeData();
     }
   } catch (error) {
     // Handel fouten af
     console.error("Fetch error:", error);
   }
 }
-fetchData('recipes', 2);
+fetchData("recipes", 2);
 function getRecipeData(id) {
   requestedRecipeData = data[id];
   // console.log(requestedRecipeData)
 }
-fetchData('recipes', 'all');
-function getAllRecipeData(){
-  requestedAllRecipeData = data ;
-    // console.log(requestedAllRecipeData)
+fetchData("recipes", "all");
+function getAllRecipeData() {
+  requestedAllRecipeData = data;
+  console.log(requestedAllRecipeData);
 }
-export{ requestedRecipeData };
-export{ requestedAllRecipeData };
-
-
+export { requestedRecipeData };
+export { requestedAllRecipeData };
