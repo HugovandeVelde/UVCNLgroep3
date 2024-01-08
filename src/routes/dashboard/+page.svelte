@@ -1,6 +1,7 @@
-<div class="flex flex-col items-center justify-center min-h-screen font-sans">
+<!-- <div class="flex flex-col items-center justify-center min-h-screen font-sans">
 
     <div class="text-center text-2xl mb-5">
+    </div> -->
 <script>
   import BottomBar from "../../lib/components/BottomBar.svelte";
     import { requestedAllData } from '../../lib/users';
@@ -122,7 +123,7 @@
     <div class="flex flex-wrap justify-center gap-4 mb-8">
         <!-- Horizontally scrolling recommended recipes -->
         <div class="recommended-item">
-            <h3>{requestedAllRecipeData[2].name}</h3>
+            <h3>{requestedAllRecipeData[1].name}</h3>
             <!-- More information about recommended recipe 1 -->
         </div>
         <div class="recommended-item">
