@@ -1,159 +1,70 @@
-<!-- <div class="flex flex-col items-center justify-center min-h-screen font-sans">
-
-    <div class="text-center text-2xl mb-5">
-    </div> -->
 <script>
-  import BottomBar from "../../lib/components/BottomBar.svelte";
-    import { requestedAllData } from '../../lib/users';
-    import { requestedAllRecipeData } from '../../lib/index';
-    console.log(requestedAllData)
-</script>
-
-<style>
-    /* Styles for your dashboard layout */
-    .dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Add some padding for better spacing */
-    font-family: Arial, sans-serif;
-}
-
-.header {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.search-button {
-    padding: 15px 25px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.recommended {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.recommended-item {
-        width: 150px; /* Fixed width of 250 pixels */
-        height: 150px; /* Fixed height of 250 pixels */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        text-align: center;
-        box-sizing: border-box;
-        position: relative;
-    }
-
-    .recommended-item h3 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-    }
-
-.account-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.account-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-    width: 45%; /* Adjust button width for better spacing */
-    max-width: 200px;
-    text-align: center;
-}
-
-.logo {
-    width: 100%; /* Adjust logo to fill the container */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo img {
-    max-width: 100%;
-    height: auto;
-}
-
-</style>
-
-<div class="dashboard">
-
-    <div class="header">
-        <h1>Welcome back, (name)!</h1>
-    </div>
-    
-    <div class="w-72 mb-8 mx-auto">
-        <!-- Add the URL to your logo here -->
-        <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto">
-    </div>
-
-    <div class="text-center text-xl mb-5">
-        <h1>Search Recipes</h1>
-        <a href="/search">
-            <button class="search-button">Search Page</button>
-        </a>
-        <button class="py-3 px-4 text-lg bg-blue-500 text-white rounded cursor-pointer mb-8">Search Page</button>
-    </div>
-
-    <div class="header">
-        <h1>Recommended Recipes</h1>    
-    </div>
-
-    <div class="flex flex-wrap justify-center gap-4 mb-8">
-        <!-- Horizontally scrolling recommended recipes -->
-        <div class="recommended-item">
+    import BottomBar from "../../lib/components/BottomBar.svelte";
+      import { requestedAllData } from '../../lib/users';
+      import { requestedAllRecipeData } from '../../lib/index';
+      console.log(requestedAllData)
+  </script>
+  
+  <div class="flex flex-col items-center p-5 font-sans">
+  
+      <div class="text-center text-lg mb-2.5">
+          <h1>Welcome back, (name)!</h1>
+      </div>
+      
+      <div class="w-full text-center mb-5">
+          <!-- Add the URL to your logo here -->
+          <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto">
+      </div>
+  
+      <div class="text-center text-lg mb-2.5">
+          <h1>Search Recipes</h1>
+          <a href="/search">
+              <button class="px-6 py-3.5 text-base bg-blue-500 text-white rounded-lg cursor-pointer mb-5">Search Page</button>
+          </a>
+      </div>
+  
+      <div class="text-center text-lg mb-2.5">
+          <h1>Recommended Recipes</h1>    
+      </div>
+  
+      <div class="flex flex-col items-center mb-5">
+    <!-- Row 1 -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[1].name}</h3>
             <!-- More information about recommended recipe 1 -->
         </div>
-        <div class="recommended-item">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[2].name}</h3>
             <!-- More information about recommended recipe 2 -->
         </div>
-        <div class="recommended-item">
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[3].name}</h3>
             <!-- More information about recommended recipe 3 -->
         </div>
-        <div class="recommended-item">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[4].name}</h3>
             <!-- More information about recommended recipe 4 -->
         </div>
-        <div class="recommended-item">
+    </div>
+
+    <!-- Additional rows as needed -->
+    <!-- For odd number of recipes, the last row will have one item -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
             <h3>{requestedAllRecipeData[5].name}</h3>
             <!-- More information about recommended recipe 5 -->
         </div>
     </div>
-
-    <div class="account-buttons">
-        <button class="account-button">
-            <a href="/account">
-                My Account
-            </a>
-        </button>
-        <button class="account-button">History</button>
-        <button class="account-button">Friends List</button>
-        <button class="account-button">Saved Recipes</button>
-    </div>
-
-    <!-- Other sections or components for your dashboard -->
 </div>
+
+  
+     <BottomBar />
+  
+      <!-- Other sections or components for your dashboard -->
+  </div>
+  
