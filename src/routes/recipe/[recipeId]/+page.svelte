@@ -5,7 +5,7 @@
   import { requestedAllRecipeData } from "../../../lib/index";
   import { requestedAllIngredients } from "../../../lib/ingredients";
   import { requestedAllSteps } from "../../../lib/steps";
-  const recipeId = $page.params.recipeId;
+  const recipeId = $page.params.recipeId - 1;
   let recipe;
 </script>
 
@@ -93,7 +93,7 @@
       {#if stap.recipeId === recipe.id}
         <tr>
           <td VALIGN='top'>
-            <p>{stap.stepNr}.</p>
+            <p>{stap.stepNr}</p>
           </td>
           <td >
             <p>{stap.instructie}</p>
