@@ -1,3 +1,4 @@
+<!--dashboard.svelte-->
 <script>
     import BottomBar from "../../lib/components/BottomBar.svelte";
       import { requestedAllData } from '../../lib/users';
@@ -52,6 +53,7 @@
           <img src="./src/img/shoarmaBowl.png" alt="shoarmaBowl" class="w-32 h-24 object-cover" />
           <div class="border-b-2 border-black w-full"></div>
           <div class="p-2">{ requestedAllRecipeData[3].name }</div>
+
         </div>
       </div>
     </div>
@@ -73,9 +75,23 @@
           <img src="./src/img/kipTeriyaki.png" alt="ja" class="w-32 h-24 object-cover" />
           <div class="border-b-2 border-black w-full"></div>
           <div class="p-2">{ requestedAllRecipeData[5].name }</div>
+
         </div>
       </div>
     </div>
+
+    <!-- Additional rows as needed -->
+    <!-- For odd number of recipes, the last row will have one item -->
+    <div class="flex flex-row justify-center gap-5 mb-5">
+        <div class="w-32 h-32 border border-gray-300 rounded-lg text-center box-border relative">
+            <a href="/recipe/5" class="flex flex-row justify-center gap-5 mb-5">
+            <h3>{requestedAllRecipeData[5].name}</h3>
+            <!-- More information about recommended recipe 5 -->
+        </a>
+        </div>
+    </div>
+</div>
+
 
   
      <BottomBar />
