@@ -39,7 +39,7 @@ function getAllUserData(){
 // Functie om data naar de backend te posten
 async function postData(table, newData) {
   try {
-    const response = await fetch(`http://localhost:4000/users`, {
+    const response = await fetch(`http://localhost:4005/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
