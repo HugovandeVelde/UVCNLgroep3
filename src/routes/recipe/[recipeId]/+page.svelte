@@ -1,80 +1,71 @@
 <!-- YourComponent.svelte -->
 <script>
-    import { page } from '$app/stores'
-    import { requestedAllData } from '../../../lib/users';
-    import { requestedAllRecipeData } from '../../../lib/index';
-    const recipeId = $page.params.recipeId;
-    let recipe
+  import { page } from "$app/stores";
+  import { requestedAllData } from "../../../lib/users";
+  import { requestedAllRecipeData } from "../../../lib/index";
+  const recipeId = $page.params.recipeId;
+  let recipe;
 </script>
 
-<style>
-    /* Add TailwindCSS classes */
-    /* For mobile screens */
-    @media (max-width: 640px) {
-      .welcome-text {
-        /* Style for the welcome text */
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 20px; /* Adjust space between text and boxes */
-      }
-      .boxes-container {
-        /* New class for the container holding the boxes */
-        display: flex;
-        justify-content: space-around; /* Adjust alignment of boxes */
-        width: 100%; /* Take full width */
-      }
-      .box {
-        /* Style for the boxes */
-  
-        border: 2px solid #000; /* Border around the boxes */
-        margin-bottom: 20px; /* Adjust space between boxes */
-        border-radius: 8px; /* Rounded edges */
-        overflow: hidden; /* Ensure content doesn't overflow */
-        display: flex; /* Make the box a flex container */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        background-color: #50c878;
-        max-width: 240px;
-        max-height: 200px;
-      }
-  
-      main {
-        text-align: center;
-        padding: 0px;
-      }
-  
-      .profile-border {
-        border: 2px solid #10b981; /* Use the same color as border-green-500 in Tailwind */
-        display: flex;
-        align-items: center;
-        padding: 1rem;
-      }
-      .profile-info {
-        flex-grow: 1; /* Allow the text to take remaining space */
-      }
-  
-      .profile-info h3 {
-        font-size: 1.5rem; /* Adjust the font size as needed */
-        font-weight: bold;
-      }
-    }
-  </style>
-  
 <main>
-  {recipe = requestedAllRecipeData[recipeId]}
-  <div class="mobile-bg w-screen"></div>
-  <div class="profile-border">
-    <!-- Profile Image -->
-    <!-- Profile Info -->
-    <div class="profile-info">
-      <h3>{recipe.name}</h3>
-      <p>{recipe.creator_id}</p>
-      <p>[tijd voor het maken]</p>
-      <p>[voedingswaarden]</p>
-    </div>
-  </div>
-
-  <div>
+  <p class='invisible'>{(recipe = requestedAllRecipeData[recipeId])}</p>
+  <table width="90%">
+    <tr>
+      <th colspan="5">
+        <h2>{recipe.name}</h2>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="5" class='center'>
+        {#each requestedAllData as user}
+          {#if user.id === recipe.creator_id}
+            <h5 class='mb-8'>{user.name}</h5>
+          {/if}
+        {/each}
+      </td>
+    </tr>
+    </table>
+    <div class='line'></div>
+    <table>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/klok.png" alt="klok" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.prepTime}</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/kcalLogo.png" alt="kcal" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.energy}</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/olieLogo.png" alt="vet" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.fat} vetten</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/eiwittenLogo.png" alt="eiwit" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.proteine} eiwitten</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/tarweLogo.png" alt="tarwe" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.carbohydrate} koolhydraten</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/mixerLogo.png" alt="mixer" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.kitchenware}</td>
+    </tr>
+  </table>
+  <div class='line'></div>
+  <!-- <div>
     <h2>[Ingredient name] [hoeveelheid]</h2>
     <br />
     <h2>[Ingredient name] [hoeveelheid]</h2>
@@ -96,12 +87,61 @@
       <h3>[step instruction]</h3>
       <!-- YourComponent.svelte -->
 
-      <!-- <h1>Bereidingswijze</h1>
+  <!-- <h1>Bereidingswijze</h1>
   <h3>{steps[currentStep]}</h3>
   <div class="flex justify-between">
   <button button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" on:click={prevStep} disabled={currentStep === 0}>Vorige stap</button>
   <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={nextStep} disabled={currentStep === steps.length - 1}>Volgende stap</button>
  </div> -->
-    </div>
-  </div>
+  <!-- </div>
+  </div>  -->
 </main>
+
+<style>
+  /* Add TailwindCSS classes */
+  /* For mobile screens */
+  @media (max-width: 640px) {
+    main {
+      padding: 0px;
+    }
+  .line {
+    height: 1px;
+    width: 95%;
+    margin-left: 2.5%;
+    border: 1px solid black;
+  }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    h5 {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    /* table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    } */
+    .logoImg {
+      height: 20px;
+      width: 20px;
+      display: block; 
+      margin-left: 70%; 
+      margin-right: auto;
+      
+    }
+    table {
+      margin: 5%;
+    }
+    .logoVak {
+      text-align: left;
+      width: 30%;
+      
+    }
+    .center{
+      text-align: center;
+    }
+  }
+</style>
