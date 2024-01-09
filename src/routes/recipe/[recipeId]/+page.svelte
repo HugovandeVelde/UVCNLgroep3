@@ -73,19 +73,6 @@ function navigateToAnotherPage() {
     margin-top: 20px;
     cursor: pointer;
   }
-
-  ul {
-    list-style: none;
-    width: 100%;
-    font-style: normal;
-    font-weight: 400;
-    
-    line-height: 29px;
-
-    color: #000000;
-
-  }
-
     .profile-border {
     border: 2px solid #10B981; /* Use the same color as border-green-500 in Tailwind */
     display: flex;
@@ -111,6 +98,8 @@ function navigateToAnotherPage() {
     <div class="profile-info">
         <h3>[recipename]</h3>
         <p>[username]</p>
+        <p>[tijd voor het maken]</p>
+        <p>[voedingswaarden]</p>
     </div>
 </div>
   <h2>[step nr.]</h2>
