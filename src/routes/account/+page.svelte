@@ -3,7 +3,7 @@
     let username = "User123";
     let email = "user@example.com";
     import BottomBar from '../../lib/components/BottomBar.svelte';
-    let userProfilePicture = "https://static.wikia.nocookie.net/disney/images/7/73/Alice_Render.png/revision/latest?cb=20170606133308";
+    let userProfilePicture = "";
 </script>
 
 <div
@@ -34,7 +34,7 @@
         <div class="inline-block relative w-20 h-20 rounded-full overflow-hidden">
             <img
                 class="w-full h-full object-cover rounded-full"
-                    src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.khwiki.com%2FAlice&psig=AOvVaw37E6AUMLUbV-GQFAo8VRIm&ust=1702988250161000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODxlOD7mIMDFQAAAAAdAAAAABAH"
+                    src="./src/img/shariqueen.png"
                     alt="Profile"
                 />
             </div>
