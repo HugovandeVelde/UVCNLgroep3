@@ -1,110 +1,118 @@
 <script>
     import BottomBar from "../../lib/components/BottomBar.svelte";
-      import { requestedAllData } from '../../lib/users';
-      import { requestedAllRecipeData } from '../../lib/index';
-      console.log(requestedAllData)
-  </script>
-  
-  <style>
-      /* Styles for your dashboard layout */
-      .dashboard {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          font-family: Arial, sans-serif;
-      }
-  
-      .header {
-          text-align: center;
-          font-size: 20px;
-          margin-bottom: 10px;
-      }
-  
-      .search-button {
-          padding: 15px 25px;
-          font-size: 16px;
-          background-color: #3498db;
-          color: #fff;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          margin-bottom: 20px;
-      }
-  
-      .recommended {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 20px;
-          margin-bottom: 20px;
-      }
-  
-      .recommended-item {
-          width: 250px; /* Fixed width of 250 pixels */
-          height: 250px; /* Fixed height of 250 pixels */
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          text-align: center;
-          box-sizing: border-box;
-          position: relative;
-      }
-  
-      .recommended-item h3 {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          margin: 0;
-      }
-  
-      .account-buttons {
-          display: flex;
-          justify-content: space-around;
-          width: 80%;
-          max-width: 600px;
-          margin-bottom: 20px;
-      }
-  
-      .account-button {
-          padding: 10px 20px;
-          font-size: 16px;
-          background-color: #2ecc71;
-          color: #fff;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          margin: 10px;
-      }
-  
-      .logo {
-          width: 450px; /* Custom size of the logo */
-          margin-bottom: 20px;
-          text-align: center; /* Centering the logo */
-      }
-      
-      .logo img {
-          max-width: 100%; /* Keeps the logo within the specified width */
-          height: auto;
-      }
-  
-  </style>
-  
-  <div class="dashboard">
-      
-      <div class="logo">
-          <!-- Add the URL to your logo here -->
-          <img src="/src/img/logo.png" alt="Our Logo">
-      </div>
-      <div class="header">
-          <h1>Recipes:</h1>    
-      </div>
-      <ol>
-        <a href='http://localhost:5173/recipe/1'>{requestedAllRecipeData[1].name}</a>   
-        <a href='http://localhost:5173/recipe/2'>{requestedAllRecipeData[2].name}</a>   
-        <a href='http://localhost:5173/recipe/3'>{requestedAllRecipeData[3].name}</a>   
-        <a href='http://localhost:5173/recipe/4'>{requestedAllRecipeData[4].name}</a>   
-        <a href='http://localhost:5173/recipe/5'>{requestedAllRecipeData[5].name}</a>   
-      </ol>
+    import { requestedAllData } from "../../lib/users";
+    import { requestedAllRecipeData } from "../../lib/index";
+    console.log(requestedAllData);
+    let recipes = requestedAllRecipeData;
+    console.log(requestedAllRecipeData);
+
+</script>
+
+<style>
+    /* Styles for your dashboard layout */
+    .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; /* Add padding to create space from the top */
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.recipe-item {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Center align text */
+}
+
+.recipe-item p {
+    margin: 5px 0;
+}
+
+    .recipe-box {
+        width: 100%;
+        height: 200px; /* Adjust the height of the clickable box */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        box-sizing: border-box;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .recipe-box:hover {
+        /* Add hover effects if desired */
+        background-color: #f0f0f0;
+    }
+
+    .recipe-box p {
+        margin: 5px 0;
+    }
+
+    .recipe-box img {
+        /* Adjust image styles if using images in the box */
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* For screens smaller than 768px (typical mobile devices) */
+    @media (max-width: 768px) {
+        .recipe-item {
+            width: 100%; /* Occupy full width on smaller screens */
+        }
+
+        .recipe-box {
+            height: 150px; /* Reduce box height for smaller screens */
+        }
+    }
+</style>
+
+<div class="dashboard">
+    <div class="logo">
+        <!-- Your logo -->
+        <img src="/src/img/logo.png" alt="Our Logo" />
     </div>
+    <div class="header">
+        <h1>Search Results:</h1>
+    </div>
+    <div class="recipe-container">
+        {#each recipes as recipe}
+            <div class="recipe-item">
+                <a href={`http://localhost:5173/recipe/${recipe.id}`}>
+                    <div class="recipe-box">
+                        <!-- Box content for recipe -->
+                    </div>
+                    <p>{recipe.name}</p>
+                </a>
+            </div>
+        {/each}
+    </div>
+</div>
+
+
