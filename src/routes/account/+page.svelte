@@ -3,7 +3,7 @@
     let username = "User123";
     let email = "user@example.com";
     import BottomBar from '../../lib/components/BottomBar.svelte';
-    let userProfilePicture = "./src/img/kipTeriyaki.png";
+    let userProfilePicture = "";
 </script>
 
 <div
@@ -34,7 +34,7 @@
         <div class="inline-block relative w-20 h-20 rounded-full overflow-hidden">
             <img
                 class="w-full h-full object-cover rounded-full"
-                    src="./src/img/kipTeriyaki.png"
+                    src="./src/img/shariqueen.png"
                     alt="Profile"
                 />
             </div>

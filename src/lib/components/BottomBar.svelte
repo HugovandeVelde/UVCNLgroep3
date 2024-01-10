@@ -15,7 +15,7 @@
     <!-- Account Tab -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'search'} on:click={() => setActiveTab('search')}>
+    <div class="flex-1 text-center cursor-pointer" >
         <!-- SVG Search Icon -->
         <svg
           class="w-6 h-6 inline-block mr-1"
@@ -30,14 +30,14 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <span>Search</span>
+        <a href='/search'>Search</a>
       </div>
     
     <!-- Saved Tab -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
      <!-- svelte-ignore a11y-missing-content -->
-     <a href="http://localhost:5173/account" class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'account'} on:click={() => setActiveTab('account')}>
+     <a href="http://localhost:5174/account" class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'account'} on:click={() => setActiveTab('account')}>
         <img src="./src/img/kipTeriyaki.png" alt="Profile" class="w-6 h-6 rounded-full inline-block mr-2">
       </a>
     

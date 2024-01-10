@@ -1,120 +1,117 @@
 <!-- YourComponent.svelte -->
 <script>
-    
-let steps = [
-    "Stap 1: Kook de spaghetti\nBreng een grote pan met water aan de kook.\nVoeg een snufje zout toe aan het kokende water.\nKook de spaghetti volgens de aanwijzingen op de verpakking totdat het beetgaar is.\nGiet de spaghetti af in een vergiet en zet deze opzij.",
-    "Stap 2: Rooster de pijnboompitten\nVerhit een koekenpan op middelhoog vuur.\nVoeg de pijnboompitten toe en rooster ze gedurende ongeveer 3 minuten, of tot ze goudbruin zijn.\nHaal de geroosterde pijnboompitten van het vuur en leg ze op een bord om af te koelen.",
-    "Stap 3: Maak de pesto\nPlaats de geroosterde pijnboompitten, geraspte kaas en knoflook in een keukenmachine.\nVoeg de verse basilicumblaadjes en olijfolie toe.\nPulseer de ingrediënten in de keukenmachine tot een smeuïge pesto ontstaat.\nBreng de pesto op smaak met peper en zout.",
-    "Stap 4: Combineer met de spaghetti\nSchep ongeveer 4 eetlepels van de pesto door de gekookte spaghetti en meng goed.",
-    "Stap 5: Serveer\nVerdeel de met pesto gegarneerde spaghetti over 6 borden.\nOptioneel: Garneer met extra kaas en basilicumblaadjes voor een aantrekkelijke presentatie.\nServeer de gerechten onmiddellijk. Eet smakelijk!"
-  ];
-
-  let currentStep = 0;
-
-  function nextStep() {
-    if (currentStep < steps.length - 1) {
-      currentStep += 1;
-    }
-  }
-
-  function prevStep() {
-    if (currentStep > 0) {
-      currentStep -= 1;
-    }
-  }
-
-  import { goto } from '$app/navigation';
-
-function navigateToAnotherPage() {
-  // Replace '/your-target-page' with the path of the page you want to navigate to
-  goto('recipeSteps');
-}
+  import { page } from "$app/stores";
+  import { requestedAllData } from "../../../lib/users";
+  import { requestedAllRecipeData } from "../../../lib/index";
+  import { requestedAllIngredients } from "../../../lib/ingredients";
+  import { requestedAllSteps } from "../../../lib/steps";
+  const recipeId = $page.params.recipeId - 1;
+  let recipe;
 </script>
-<style>
-  /* Add TailwindCSS classes */
-  /* For mobile screens */
-  @media (max-width: 640px) {
-    
-    .welcome-text {
-      /* Style for the welcome text */
-      font-size: 24px;
-      text-align: center;
-      margin-bottom: 20px; /* Adjust space between text and boxes */
-    }
-    .boxes-container {
-      /* New class for the container holding the boxes */
-      display: flex;
-      justify-content: space-around; /* Adjust alignment of boxes */
-      width: 100%; /* Take full width */
-    }
-    .box {
-    /* Style for the boxes */
-   
-    border: 2px solid #000; /* Border around the boxes */
-    margin-bottom: 20px; /* Adjust space between boxes */
-    border-radius: 8px; /* Rounded edges */
-    overflow: hidden; /* Ensure content doesn't overflow */
-    display: flex; /* Make the box a flex container */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    background-color: #50C878;
-    max-width: 240px;
-    max-height: 200px;
-  }
 
-  main {
-    text-align: center;
-    padding: 0px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-    .profile-border {
-    border: 2px solid #10B981; /* Use the same color as border-green-500 in Tailwind */
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-  }
-  .profile-info {
-    flex-grow: 1; /* Allow the text to take remaining space */
-  }
-
-  .profile-info h3 {
-    font-size: 1.5rem; /* Adjust the font size as needed */
-    font-weight: bold;
-  }}
-</style>
-<main> 
-
-<div class="mobile-bg w-screen">
-      </div>
-  <div class="profile-border">
-    <!-- Profile Image -->
-    <!-- Profile Info -->
-    <div class="profile-info">
-        <h3>[recipename]</h3>
-        <p>[username]</p>
-        <p>[tijd voor het maken]</p>
-        <p>[voedingswaarden]</p>
-    </div>
-</div>
-  <h2>[step nr.]</h2>
-  <h3>[step instruction]</h3>
-  <h2>[step nr.]</h2>
-  <h3>[step instruction]</h3>
-  <h2>[step nr.]</h2>
-  <h3>[step instruction]</h3>
-  <h2>[step nr.]</h2>
-  <h3>[step instruction]</h3>
-  <!-- YourComponent.svelte -->
-
-
-<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={navigateToAnotherPage}>Ga naar de Bereidingswijze</button>
-
+<main>
+  <p class="invisible">{(recipe = requestedAllRecipeData[recipeId])}</p>
+  <table width="90%">
+    <tr>
+      <th colspan="5">
+        <h2>{recipe.name}</h2>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="5" class="center">
+        {#each requestedAllData as user}
+          {#if user.id === recipe.creator_id}
+            <h5 class="mb-8">{user.name}</h5>
+          {/if}
+        {/each}
+      </td>
+    </tr>
+  </table>
+  <div class="line"></div>
+  <table>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/klok.png" alt="klok" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.prepTime}</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/kcalLogo.png" alt="kcal" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.energy}</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/olieLogo.png" alt="vet" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.fat} vetten</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/eiwittenLogo.png" alt="eiwit" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.proteine} eiwitten</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/tarweLogo.png" alt="tarwe" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.carbohydrate} koolhydraten</td>
+    </tr>
+    <tr>
+      <td class="logoVak">
+        <img src="./../src/img/mixerLogo.png" alt="mixer" class="logoImg" />
+      </td>
+      <td colspan="2">{recipe.kitchenware}</td>
+    </tr>
+  </table>
+  <div class="line"></div>
+  <table width="90%">
+    <th colspan="5">
+      <h2>Ingredienten:</h2>
+    </th>
+    {#each requestedAllIngredients as ingredient}
+      {#if ingredient.recipeId === recipe.id}
+        <tr>
+          <td class="hoeveelheidVak">
+            <p>{ingredient.Hoeveelheid}</p>
+          </td>
+          <td>
+            <p class="ml-2">{ingredient.ingredientName}</p>
+          </td>
+        </tr>
+      {/if}
+    {/each}
+  </table>
+  <div class="line"></div>
+  <table width="90%">
+    <th colspan="5">
+      <h2>Bereidingswijze:</h2>
+    </th>
+    {#each requestedAllSteps as stap}
+      {#if stap.recipeId === recipe.id}
+        <tr>
+          <td VALIGN='top'>
+            <p>{stap.stepNr}</p>
+          </td>
+          <td >
+            <p>{stap.instructie}</p>
+          </td>
+        </tr>
+      {/if}
+    {/each}
+  </table>
+  <!-- <div>
+      <h2>[step nr.]</h2>
+      <h3>[step instruction]</h3>
+      <h2>[step nr.]</h2>
+      <h3>[step instruction]</h3>
+      <h2>[step nr.]</h2>
+      <h3>[step instruction]</h3>
+      <h2>[step nr.]</h2>
+      <h3>[step instruction]</h3>
+      <!-- YourComponent.svelte -->
 
   <!-- <h1>Bereidingswijze</h1>
   <h3>{steps[currentStep]}</h3>
@@ -122,6 +119,56 @@ function navigateToAnotherPage() {
   <button button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" on:click={prevStep} disabled={currentStep === 0}>Vorige stap</button>
   <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={nextStep} disabled={currentStep === steps.length - 1}>Volgende stap</button>
  </div> -->
-
-
+  <!-- </div>
+  </div>  -->
 </main>
+
+<style>
+  /* Add TailwindCSS classes */
+  /* For mobile screens */
+  @media (max-width: 640px) {
+    main {
+      padding: 0px;
+    }
+    .hoeveelheidVak {
+      text-align: right;
+    }
+    .line {
+      height: 1px;
+      width: 95%;
+      margin-left: 2.5%;
+      border: 1px solid black;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    h5 {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    /* table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    } */
+    .logoImg {
+      height: 20px;
+      width: 20px;
+      display: block;
+      margin-left: 70%;
+      margin-right: auto;
+    }
+    table {
+      margin: 5%;
+    }
+    .logoVak,
+    .hoeveelheidVak {
+      width: 30%;
+    }
+    .center {
+      text-align: center;
+    }
+  }
+</style>

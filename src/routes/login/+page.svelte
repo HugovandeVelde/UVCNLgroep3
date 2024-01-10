@@ -7,6 +7,7 @@
     function handleSubmit(event) {
         event.preventDefault();
         isSubmitted = true;
+        console.log('test')
     }
 </script>
 
@@ -32,6 +33,7 @@
     </form>
     {#if isSubmitted}
         {#each requestedAllData as user}
+        {console.log(user.email + form.email + user.password + form.password )}
             <!-- {console.log(user.email + user.password + form.email + form.password)} -->
             {#if user.email === form.email && user.password === form.password && isSubmitted}
                     {window.location.replace("http://localhost:5173/dashboard")}

@@ -162,6 +162,3 @@
     <a href="recipeList" class="search-button">Search</a>
 </div>
 </div>
-
-
-
