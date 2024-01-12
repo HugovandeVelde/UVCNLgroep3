@@ -52,8 +52,11 @@
     @import './style.css';
 </style>
 
-<div class="search-section">
+<div class="search-page-header">
     <h1>Search Page</h1>
+</div>
+
+<div class="search-section">
 
     <div>
         <label for="pricePerPortion">Price per Portion:</label>
@@ -155,8 +158,7 @@
         <input type="range" id="sugar" min="0" max="50" step="1" bind:value={filters.sugar} on:input={applyFilters} />
         <output>{filters.sugar}</output>
     </div>
+
+    <a href="recipeList" class="search-button">Search</a>
 </div>
-<a href="/recipeList">
-    Continue
-</a>
 </div>
