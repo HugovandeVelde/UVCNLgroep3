@@ -86,7 +86,7 @@
       {#each requestedAllRecipeData as recipe}
       <div class='container'>
         <div class="nameContainer">
-          <a class='containerText name' href='http://localhost:5174/recipe/{recipe.id - 1}'>{recipe.name}</a>
+          <a class='containerText name' href='http://localhost:5173/recipe/{recipe.id - 1}'>{recipe.name}</a>
         </div>
         <div class="prepTimeContainer">
           <img src='./../src/img/klok.png' alt='klok' class='klokImg'>
@@ -96,4 +96,3 @@
       {/each}
     </ol>
   </div>
-  x

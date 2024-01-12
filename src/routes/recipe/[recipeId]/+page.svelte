@@ -5,11 +5,29 @@
   import { requestedAllRecipeData } from "../../../lib/index";
   import { requestedAllIngredients } from "../../../lib/ingredients";
   import { requestedAllSteps } from "../../../lib/steps";
+  import BottomBar from "../../../lib/components/BottomBar.svelte";
   const recipeId = $page.params.recipeId - 1;
   let recipe;
 </script>
 
-<main>
+<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
+  <div class="absolute left-4 top-4">
+            <button onclick="history.back()">Go Back
+                <!-- SVG Arrow Icon -->
+                <svg
+                    class="w-6 h-6 inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M10.707 4.293a1 1 0 0 1 1.414 1.414L8.414 10l3.707 3.293a1 1 0 1 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 0 1.414z"
+                    />
+                </svg>
+                <!-- Text -->
+            </button>
+        </div>
   <p class="invisible">{(recipe = requestedAllRecipeData[recipeId])}</p>
   <table width="90%">
     <tr>
@@ -102,6 +120,7 @@
       {/if}
     {/each}
   </table>
+  <BottomBar />
   <!-- <div>
       <h2>[step nr.]</h2>
       <h3>[step instruction]</h3>
