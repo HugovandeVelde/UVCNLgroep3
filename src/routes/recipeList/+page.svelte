@@ -13,123 +13,28 @@
 
 </script>
 
-<style>
-    /* Styles for your dashboard layout */
-    .dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px; /* Add padding to create space from the top */
-    font-family: Arial, sans-serif;
-}
-
-.header {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 250px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.logo img {
-    max-width: 100%;
-    height: auto;
-}
-
-.recipe-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 800px;
-    margin-top: 20px;
-}
-
-.recipe-item {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    text-align: center; /* Center align text */
-}
-
-.recipe-item p {
-    margin: 5px 0;
-}
-
-    .recipe-box {
-        width: 100%;
-        height: 200px; /* Adjust the height of the clickable box */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        text-align: center;
-        box-sizing: border-box;
-        position: relative;
-        cursor: pointer;
-    }
-
-    .recipe-box:hover {
-        /* Add hover effects if desired */
-        background-color: #f0f0f0;
-    }
-
-    .recipe-box p {
-        margin: 5px 0;
-    }
-
-    .recipe-box img {
-        /* Adjust image styles if using images in the box */
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* For screens smaller than 768px (typical mobile devices) */
-    @media (max-width: 768px) {
-        .recipe-item {
-            width: 100%; /* Occupy full width on smaller screens */
-        }
-
-        .recipe-box {
-            height: 150px; /* Reduce box height for smaller screens */
-        }
-    }
-</style>
-
-<div class="dashboard">
-    <div class="logo">
-        <!-- Your logo -->
-        <img src="/src/img/logo.png" alt="Our Logo" />
+<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
+    <div class="w-full mb-5 flex justify-center">
+        <img
+            src="/src/img/logo.png"
+            alt="Our Logo"
+            class="max-w-full h-auto mix-blend-multiply"
+        />
     </div>
-    <div class="header">
-        <h1>Search Results:</h1>
+    <div class="header text-center mb-8">
+        <h1 class="text-4xl font-bold">Search Results:</h1>
     </div>
-    <div class="recipe-container">
+    <div class="flex flex-col items-center w-full mt-4 mx-auto">
         {#each recipes as recipe}
-            <div class="recipe-item">
-                <a href={`http://localhost:5173/recipe/${recipe.id}`}>
-                    <div class="recipe-box">
-                        <!-- Box content for recipe -->
+            <div class="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 mb-4">
+                <a href={`http://localhost:5173/recipe/${recipe.id}`} class="block rounded overflow-hidden hover:bg-gray-100 shadow-md">
+                    <div class="flex flex-col items-center p-4">
+                        <p class="text-xl font-semibold">{recipe.name}</p>
+                        <p class='containerText prepTimeText'>{recipe.prepTime}</p>
+                        <!-- Optionally, add more details here -->
                     </div>
-                    <p>{recipe.name}</p>
                 </a>
             </div>
         {/each}
-    </div>
-      <ol>
-      {#each requestedAllRecipeData as recipe}
-      <div class='container'>
-        <div class="nameContainer">
-          <a class='containerText name' href='http://localhost:5173/recipe/{recipe.id - 1}'>{recipe.name}</a>
-        </div>
-        <div class="prepTimeContainer">
-          <img src='./../src/img/klok.png' alt='klok' class='klokImg'>
-          <p class='containerText prepTimeText'>{recipe.prepTime}</p>
-        </div>
-      </div>
-      {/each}
-    </ol>
-</div>
-
+    <BottomBar />
+</main>
