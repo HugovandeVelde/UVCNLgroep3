@@ -40,11 +40,9 @@
         <td><input placeholder="€15,50" /></td>
       </tr>
     </table>
-    <div class='invitationButton'>
-        <div class='mr-2 ml-2'>
-                  <p>Deel uitnodiging</p>
-        </div>
-
+    <div class='deelLinkContainer'>
+      <p>Deel de onderstaande link met alle mensen die je wilt uitnodigen:</p>
+      <p class='link'>https://voorbeeldlink</p>
     </div>
   </main>
 </body>
@@ -70,15 +68,15 @@
     margin-left: 5%;
     margin-right: 5%;
   }
-  .invitationButton{
-    background-color: green;
-    border: black solid 1px;
-    border-radius: 5px;
-    width: fit-content;
-    margin-left: 30%;
-    margin-top: 30%;
+  .deelLinkContainer{
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
   }
-  p{
-    color: white;
+  .link{
+    color: rgb(83, 83, 83);
+    text-decoration: underline solid rgb(83, 83, 83);
+    
   }
 </style>
