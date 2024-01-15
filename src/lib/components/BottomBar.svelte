@@ -58,7 +58,9 @@
         >
           <path d="M5 3v18l7-5 7 5V3"></path>
         </svg>
-        <span>Saved</span>
+        <a href="http://localhost:5173/saved" class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'account'} on:click={() => setActiveTab('account')}>
+          <p>Saved</p>
+        </a>
       </div>
       
   </div>
