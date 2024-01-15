@@ -1,4 +1,6 @@
 <script>
+    import BackButton from "../../lib/components/BackButton.svelte";
+
 
     let filters = {
         pricePerPortion: 3,
@@ -53,6 +55,7 @@
 </style>
 
 <div class="search-section">
+    <BackButton />
     <h1>Search Page</h1>
 
     <div>

@@ -5,11 +5,13 @@
   import { requestedAllRecipeData } from "../../../lib/index";
   import { requestedAllIngredients } from "../../../lib/ingredients";
   import { requestedAllSteps } from "../../../lib/steps";
+    import BackButton from "../../../lib/components/BackButton.svelte";
   const recipeId = $page.params.recipeId - 1;
   let recipe;
 </script>
 
-<main>
+<main class="">
+  <BackButton />
   <p class="invisible">{(recipe = requestedAllRecipeData[recipeId])}</p>
   <table width="90%">
     <tr>
