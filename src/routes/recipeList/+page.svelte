@@ -1,10 +1,19 @@
 <script>
+    import { onMount } from 'svelte';
     import BottomBar from "../../lib/components/BottomBar.svelte";
     import { requestedAllData } from "../../lib/users";
     import { requestedAllRecipeData } from "../../lib/index";
     console.log(requestedAllData);
     let recipes = requestedAllRecipeData;
     console.log(requestedAllRecipeData);
+<<<<<<< HEAD
+=======
+    onMount(async () => {
+        const res = await fetch("http://localhost:4006/recipes/");
+		recipes = await res.json();
+	});
+
+>>>>>>> dc2ce86c6c8a1618780dabe4d076e335a9d347fb
 </script>
 
 <div class="dashboard">

@@ -37,7 +37,11 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
      <!-- svelte-ignore a11y-missing-content -->
+<<<<<<< HEAD
      <a href="/account" class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'account'} on:click={() => setActiveTab('account')}>
+=======
+     <a href="http://localhost:5173/account" class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'account'} on:click={() => setActiveTab('account')}>
+>>>>>>> dc2ce86c6c8a1618780dabe4d076e335a9d347fb
         <img src="./src/img/kipTeriyaki.png" alt="Profile" class="w-6 h-6 rounded-full inline-block mr-2">
       </a>
     
@@ -58,7 +62,9 @@
         >
           <path d="M5 3v18l7-5 7 5V3"></path>
         </svg>
-        <span>Saved</span>
+        <a href="http://localhost:5173/saved" class="flex-1 text-center cursor-pointer" class:font-bold={activeTab === 'account'} on:click={() => setActiveTab('account')}>
+          <p>Saved</p>
+        </a>
       </div>
       
   </div>
