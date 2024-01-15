@@ -140,6 +140,11 @@
  </div> -->
   <!-- </div>
   </div>  -->
+  <a href='http://localhost:5173/shareInvitation/{recipeId + 1}'>share</a>
+  <br>
+  <br>
+  <br>
+  <br>
 </main>
 
 <style>
