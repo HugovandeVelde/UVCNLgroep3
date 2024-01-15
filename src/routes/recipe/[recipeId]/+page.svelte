@@ -5,13 +5,17 @@
   import { requestedAllRecipeData } from "../../../lib/index";
   import { requestedAllIngredients } from "../../../lib/ingredients";
   import { requestedAllSteps } from "../../../lib/steps";
-    import BackButton from "../../../lib/components/BackButton.svelte";
+  import BottomBar from "../../../lib/components/BottomBar.svelte";
+  import BackButton from "../../../lib/components/BackButton.svelte";
+
   const recipeId = $page.params.recipeId - 1;
   let recipe;
 </script>
 
-<main class="">
+<div class="bg-[#F0FFEA]">
   <BackButton />
+</div>
+<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
   <p class="invisible">{(recipe = requestedAllRecipeData[recipeId])}</p>
   <table width="90%">
     <tr>
@@ -94,16 +98,17 @@
     {#each requestedAllSteps as stap}
       {#if stap.recipeId === recipe.id}
         <tr>
-          <td VALIGN='top'>
+          <td VALIGN="top">
             <p>{stap.stepNr}</p>
           </td>
-          <td >
+          <td>
             <p>{stap.instructie}</p>
           </td>
         </tr>
       {/if}
     {/each}
   </table>
+  <BottomBar />
   <!-- <div>
       <h2>[step nr.]</h2>
       <h3>[step instruction]</h3>
@@ -123,6 +128,11 @@
  </div> -->
   <!-- </div>
   </div>  -->
+  <a href="/shareInvitation/{recipeId + 1}">share</a>
+  <br />
+  <br />
+  <br />
+  <br />
 </main>
 
 <style>
