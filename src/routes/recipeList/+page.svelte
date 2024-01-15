@@ -10,7 +10,6 @@
         const res = await fetch("http://localhost:4006/recipes/");
 		recipes = await res.json();
 	});
-
 </script>
 
 <main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
