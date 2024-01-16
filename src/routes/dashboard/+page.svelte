@@ -3,8 +3,27 @@
     import BottomBar from "../../lib/components/BottomBar.svelte";
     import { requestedAllData } from "../../lib/users";
     import { requestedAllRecipeData } from "../../lib/index";
-    console.log(requestedAllData);
+
+    let currentUser = null;
+    let knowsEmail = false;
+    let form = { error: null, email: "", password: "" };
+    let isSubmitted = false;
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        isSubmitted = true;
+
+        // Find the user with matching email and password
+        const user = requestedAllData.find(u => u.email === form.email && u.password === form.password);
+        if (user) {
+            currentUser = user;
+            window.location.replace("http://localhost:5173/dashboard");
+    } else {
+        form.error = "Invalid email or password";
+    }
+}
 </script>
+
 
 <main
     class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
@@ -23,8 +42,11 @@
 
         <!-- Welcome Back Section -->
         <div class="text-center text-lg mb-2.5">
-            <h1 class="sm:hidden">Welcome back, (name)!</h1>
-            <h1 class="hidden sm:block">Welcome back, (name)!</h1>
+            {#if currentUser}
+                <h1>Welcome back, {currentUser.name}!</h1>
+            {:else}
+                <h1>Welcome back!</h1>
+            {/if}
         </div>
 
         <div class="text-center text-lg mb-2.5">

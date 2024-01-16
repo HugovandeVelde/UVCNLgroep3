@@ -9,7 +9,10 @@
       <!-- Add the URL to your logo here -->
       <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto mix-blend-multiply">
     </div>
-  
+    <div class="flex gap-4 mb-8">
+      <a href="http://localhost:5173/register" class="bg-[#008080] hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</a>
+      <a href="http://localhost:5173/login" class="bg-[#228B22] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Login</a>
+    </div>
     <div class="w-full flex flex-col items-center">
       <h2 class="font-bold text-2xl text-center mb-5">Populair</h2>
       <div class="flex justify-center w-full mb-5">
@@ -70,10 +73,5 @@
             <div class="p-2">{ requestedAllRecipeData[5].name }</div>
           </div>
         </div>
-      </div>
-
-      <div class="flex gap-4 mt-5">
-        <a href="http://localhost:5173/register" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</a>
-        <a href="http://localhost:5173/login" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Login</a>
       </div>
     </main>

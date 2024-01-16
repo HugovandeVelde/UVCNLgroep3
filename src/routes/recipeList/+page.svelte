@@ -10,6 +10,8 @@
         const res = await fetch("http://localhost:4006/recipes/");
 		recipes = await res.json();
 	});
+    import IconClock from '~icons/mdi/clock-outline';
+
 </script>
 
 <main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
@@ -29,6 +31,7 @@
                 <a href={`http://localhost:5173/recipe/${recipe.id}`} class="block rounded overflow-hidden hover:bg-gray-100 shadow-md">
                     <div class="flex flex-col items-center p-4">
                         <p class="text-xl font-semibold">{recipe.name}</p>
+                        <IconClock />
                         <p class='containerText prepTimeText'>{recipe.prepTime}</p>
                         <!-- Optionally, add more details here -->
                     </div>
