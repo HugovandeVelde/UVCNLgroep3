@@ -4,7 +4,7 @@
     import BottomBar from "../../lib/components/BottomBar.svelte";
     let recipes = requestedAllRecipeData;
     onMount(async () => {
-        const res = await fetch("http://localhost:4006/recipes/");
+        const res = await fetch("http://localhost:4005/recipes/");
 		recipes = await res.json();
 	});
 </script>

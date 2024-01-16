@@ -3,12 +3,6 @@
     import BottomBar from "../../lib/components/BottomBar1.svelte";
     import { requestedAllData } from "../../lib/users";
     import { requestedAllRecipeData } from "../../lib/index";
-<<<<<<< HEAD
-</script>
-
-<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
-    <div class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans">
-=======
 
     let currentUser = null;
     let knowsEmail = false;
@@ -30,14 +24,8 @@
 }
 </script>
 
-
-<main
-    class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
->
-    <div
-        class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans"
-    >
->>>>>>> 908da5cf12d79b16e45808a18c69e94c71acd26f
+<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
+    <div class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans">
         <!-- Logo Section -->
         <div class="w-full mb-5 flex justify-center">
             <img
@@ -179,10 +167,7 @@
 
         <!-- Other sections or components for your dashboard -->
     </div>
-<<<<<<< HEAD
 
     <!-- Bottom Bar -->
+    <BottomBar />
 </main>
-=======
-</main>
->>>>>>> 908da5cf12d79b16e45808a18c69e94c71acd26f

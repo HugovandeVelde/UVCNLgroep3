@@ -5,7 +5,7 @@ let requestedRecipeData = "";
 let requestedAllRecipeData = "";
 async function fetchData(id) {
   try {
-    const response = await fetch("http://localhost:4006/users");
+    const response = await fetch("http://localhost:4007/users");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
