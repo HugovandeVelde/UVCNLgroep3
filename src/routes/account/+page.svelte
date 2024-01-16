@@ -1,9 +1,10 @@
 <!-- Account.svelte -->
 <script>
+    import BackButton from "../../lib/components/BackButton.svelte";
+    import BottomBar from "../../lib/components/BottomBar.svelte";
+
     let username = "User123";
     let email = "user@example.com";
-    import BackButton from "../../lib/components/BackButton.svelte";
-    import BottomBar from "../../lib/components/BottomBar1.svelte";
     let userProfilePicture = "";
 </script>
 

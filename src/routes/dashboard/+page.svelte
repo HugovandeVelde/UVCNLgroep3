@@ -23,18 +23,8 @@
 
         <!-- Welcome Back Section -->
         <div class="text-center text-lg mb-2.5">
-            <h1 class="sm:hidden">Welcome back, (name)!</h1>
-            <h1 class="hidden sm:block">Welcome back, (name)!</h1>
-        </div>
-
-        <div class="text-center text-lg mb-2.5">
-            <h1>Search Recipes</h1>
-            <a href="/search">
-                <button
-                    class="px-6 py-3.5 text-base bg-blue-500 text-white rounded-lg cursor-pointer mb-5"
-                    >Search Page</button
-                >
-            </a>
+            <h1 class="sm:hidden">Welcome back</h1>
+            <h1 class="hidden sm:block">Welcome back!</h1>
         </div>
 
         <div class="w-full flex flex-col items-center">
@@ -58,7 +48,7 @@
                             class="flex flex-row justify-center gap-5 mb-5"
                         >
                             <div class="p-2">
-                                <p>{requestedAllRecipeData[1].name}</p>
+                                <p>{requestedAllRecipeData[1]}</p>
                             </div>
                         </a>
                     </div>
@@ -80,7 +70,7 @@
                             class="flex flex-row justify-center gap-5 mb-5"
                         >
                             <div class="p-2">
-                                {requestedAllRecipeData[2].name}
+                                {requestedAllRecipeData[2]}
                             </div>
                         </a>
                     </div>
@@ -102,7 +92,7 @@
                             class="flex flex-row justify-center gap-5 mb-5"
                         >
                             <div class="p-2">
-                                {requestedAllRecipeData[3].name}
+                                {requestedAllRecipeData[3]}
                             </div>
                         </a>
                     </div>
@@ -127,7 +117,7 @@
                                 class="flex flex-row justify-center gap-5 mb-5"
                             >
                                 <div class="p-2">
-                                    {requestedAllRecipeData[4].name}
+                                    {requestedAllRecipeData[4]}
                                 </div>
                             </a>
                         </div>
@@ -149,7 +139,7 @@
                                 class="flex flex-row justify-center gap-5 mb-5"
                             >
                                 <div class="p-2">
-                                    {requestedAllRecipeData[5].name}
+                                    {requestedAllRecipeData[5]}
                                 </div>
                             </a>
                         </div>
