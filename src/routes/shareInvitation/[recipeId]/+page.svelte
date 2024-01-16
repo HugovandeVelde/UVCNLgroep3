@@ -18,28 +18,42 @@
     <h1 class="title">{requestedAllRecipeData[recipeId].name}</h1>
   </header>
   <main>
+    <div class="line"></div>
     <table>
-      <tr>
-        <td>Hoe veel mensen wil je uitnodigen:</td>
-        <td><input placeholder="3" /></td>
-      </tr>
-      <tr>
-        <td>Wanneer wil je mensen uitnodigen:</td>
-        <td><input type="date" /></td>
-      </tr>
-      <tr>
-        <td>Hoelaat wil je mensen uitnodigen;</td>
-        <td><input type="time" /></td>
-      </tr>
-      <tr>
-        <td>Waar wil je mensen uitnodigen:</td>
-        <td><input placeholder="3" /></td>
-      </tr>
-      <tr>
-        <td>Hoe duur zal het eten zijn:</td>
-        <td><input placeholder="€15,50" /></td>
-      </tr>
+      <th></th>
+      <tr >
+        <tr>
+          <td>
+            <p class='questions'>Hoe veel mensen wil je uitnodigen:</p>
+          </td>
+          <td><input placeholder="3" /></td>
+        </tr>
+        <tr>
+          <td>
+            <p class='questions'>Wanneer wil je mensen uitnodigen:</p>
+          </td>
+          <td><input type="date" /></td>
+        </tr>
+        <tr>
+          <td>
+            <p class='questions'>Hoelaat wil je mensen uitnodigen:</p>
+          </td>
+          <td><input type="time" /></td>
+        </tr>
+        <tr>
+          <td>
+            <p class='questions'>Waar wil je mensen uitnodigen:</p>
+          </td>
+          <td><input placeholder="3" /></td>
+        </tr>
+        <tr>
+          <td>
+            <p class='questions'>Hoe duur zal het eten zijn:</p>
+          </td>
+          <td><input placeholder="€15,50" /></td>
+        </tr>
     </table>
+    <div class="line mt-4"></div>
     <div class='deelLinkContainer'>
       <p>Deel de onderstaande link met alle mensen die je wilt uitnodigen:</p>
       <p class='link'>https://voorbeeldlink</p>
@@ -76,7 +90,24 @@
   }
   .link{
     color: rgb(83, 83, 83);
-    text-decoration: underline solid rgb(83, 83, 83);
-    
+    text-decoration: underline solid rgb(83, 83, 83);  
   }
+  .questions {
+    margin-bottom: 10px;
+  }
+  table,
+  th,
+  td {
+      /* border: 1px solid; */
+      border-collapse: separate;
+  }
+  .line {
+      height: 1px;
+      width: 95%;
+      margin-left: 2.5%;
+      border: 1px solid black;
+    }
+  /* tr{
+    padding-bottom: 100px;
+  } */
 </style>
