@@ -105,6 +105,7 @@
       height: 1px;
       width: 95%;
       margin-left: 2.5%;
+      margin-right: 2.5%;
       border: 1px solid black;
     }
   /* tr{
