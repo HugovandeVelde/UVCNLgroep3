@@ -1,17 +1,12 @@
 <!--dashboard.svelte-->
 <script>
-    import BottomBar from "../../lib/components/BottomBar.svelte";
+    import BottomBar from "../../lib/components/BottomBar1.svelte";
     import { requestedAllData } from "../../lib/users";
     import { requestedAllRecipeData } from "../../lib/index";
-    console.log(requestedAllData);
 </script>
 
-<main
-    class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
->
-    <div
-        class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans"
-    >
+<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
+    <div class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans">
         <!-- Logo Section -->
         <div class="w-full mb-5 flex justify-center">
             <img
@@ -25,16 +20,6 @@
         <div class="text-center text-lg mb-2.5">
             <h1 class="sm:hidden">Welcome back, (name)!</h1>
             <h1 class="hidden sm:block">Welcome back, (name)!</h1>
-        </div>
-
-        <div class="text-center text-lg mb-2.5">
-            <h1>Search Recipes</h1>
-            <a href="/search">
-                <button
-                    class="px-6 py-3.5 text-base bg-blue-500 text-white rounded-lg cursor-pointer mb-5"
-                    >Search Page</button
-                >
-            </a>
         </div>
 
         <div class="w-full flex flex-col items-center">
@@ -158,9 +143,8 @@
             </div>
         </div>
 
-        <!-- Bottom Bar -->
-        <BottomBar />
-
         <!-- Other sections or components for your dashboard -->
     </div>
+
+    <!-- Bottom Bar -->
 </main>
