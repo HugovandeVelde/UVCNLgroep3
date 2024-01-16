@@ -1,31 +1,17 @@
 <!--dashboard.svelte-->
 <script>
-    import BottomBar from "../../lib/components/BottomBar1.svelte";
+    import BottomBar from "../../lib/components/BottomBar.svelte";
     import { requestedAllData } from "../../lib/users";
     import { requestedAllRecipeData } from "../../lib/index";
 
-    let currentUser = null;
-    let knowsEmail = false;
-    let form = { error: null, email: "", password: "" };
-    let isSubmitted = false;
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        isSubmitted = true;
-
-        // Find the user with matching email and password
-        const user = requestedAllData.find(u => u.email === form.email && u.password === form.password);
-        if (user) {
-            currentUser = user;
-            window.location.replace("http://localhost:5173/dashboard");
-    } else {
-        form.error = "Invalid email or password";
-    }
-}
 </script>
 
-<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
-    <div class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans">
+<main
+    class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
+>
+    <div
+        class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans"
+    >
         <!-- Logo Section -->
         <div class="w-full mb-5 flex justify-center">
             <img
@@ -37,11 +23,18 @@
 
         <!-- Welcome Back Section -->
         <div class="text-center text-lg mb-2.5">
-            {#if currentUser}
-                <h1>Welcome back, {currentUser.name}!</h1>
-            {:else}
-                <h1>Welcome back!</h1>
-            {/if}
+            <h1 class="sm:hidden">Welcome back, (name)!</h1>
+            <h1 class="hidden sm:block">Welcome back, (name)!</h1>
+        </div>
+
+        <div class="text-center text-lg mb-2.5">
+            <h1>Search Recipes</h1>
+            <a href="/search">
+                <button
+                    class="px-6 py-3.5 text-base bg-blue-500 text-white rounded-lg cursor-pointer mb-5"
+                    >Search Page</button
+                >
+            </a>
         </div>
 
         <div class="w-full flex flex-col items-center">
@@ -164,7 +157,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Other sections or components for your dashboard -->
     </div>
 
