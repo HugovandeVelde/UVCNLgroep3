@@ -15,7 +15,9 @@
 <div class="bg-[#F0FFEA]">
   <BackButton />
 </div>
-<main class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5">
+<main
+  class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
+>
   <p class="invisible">{(recipe = requestedAllRecipeData[recipeId])}</p>
   <table width="90%">
     <tr>
@@ -108,27 +110,12 @@
       {/if}
     {/each}
   </table>
+  <div class='shareButton'>
+    <a class='share' href="/shareInvitation/{recipeId + 1}">Invite guests</a>
+  </div>
   <BottomBar />
-  <!-- <div>
-      <h2>[step nr.]</h2>
-      <h3>[step instruction]</h3>
-      <h2>[step nr.]</h2>
-      <h3>[step instruction]</h3>
-      <h2>[step nr.]</h2>
-      <h3>[step instruction]</h3>
-      <h2>[step nr.]</h2>
-      <h3>[step instruction]</h3>
-      <!-- YourComponent.svelte -->
 
-  <!-- <h1>Bereidingswijze</h1>
-  <h3>{steps[currentStep]}</h3>
-  <div class="flex justify-between">
-  <button button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" on:click={prevStep} disabled={currentStep === 0}>Vorige stap</button>
-  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" on:click={nextStep} disabled={currentStep === steps.length - 1}>Volgende stap</button>
- </div> -->
-  <!-- </div>
-  </div>  -->
-  <a href="/shareInvitation/{recipeId + 1}">share</a>
+
   <br />
   <br />
   <br />
@@ -136,8 +123,6 @@
 </main>
 
 <style>
-  /* Add TailwindCSS classes */
-  /* For mobile screens */
   @media (max-width: 640px) {
     main {
       padding: 0px;
@@ -149,6 +134,7 @@
       height: 1px;
       width: 95%;
       margin-left: 2.5%;
+      margin-right: 2.5%;
       border: 1px solid black;
     }
     h2 {
@@ -181,6 +167,14 @@
     }
     .center {
       text-align: center;
+    }
+    .shareButton {
+      background-color: rgb(34 197 94);
+      border: solid black 1px;
+      border-radius: 5px;
+    }
+    .share{
+      margin:2px;
     }
   }
 </style>
