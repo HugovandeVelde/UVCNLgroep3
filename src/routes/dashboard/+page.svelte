@@ -48,7 +48,7 @@
                             class="flex flex-row justify-center gap-5 mb-5"
                         >
                             <div class="p-2">
-                                <p>{requestedAllRecipeData[1]}</p>
+                                <p>{requestedAllRecipeData[1].name}</p>
                             </div>
                         </a>
                     </div>
@@ -70,7 +70,7 @@
                             class="flex flex-row justify-center gap-5 mb-5"
                         >
                             <div class="p-2">
-                                {requestedAllRecipeData[2]}
+                                {requestedAllRecipeData[2].name}
                             </div>
                         </a>
                     </div>
@@ -92,7 +92,7 @@
                             class="flex flex-row justify-center gap-5 mb-5"
                         >
                             <div class="p-2">
-                                {requestedAllRecipeData[3]}
+                                {requestedAllRecipeData[3].name}
                             </div>
                         </a>
                     </div>
@@ -117,7 +117,7 @@
                                 class="flex flex-row justify-center gap-5 mb-5"
                             >
                                 <div class="p-2">
-                                    {requestedAllRecipeData[4]}
+                                    {requestedAllRecipeData[4].name}
                                 </div>
                             </a>
                         </div>
@@ -139,7 +139,7 @@
                                 class="flex flex-row justify-center gap-5 mb-5"
                             >
                                 <div class="p-2">
-                                    {requestedAllRecipeData[5]}
+                                    {requestedAllRecipeData[5].name}
                                 </div>
                             </a>
                         </div>
