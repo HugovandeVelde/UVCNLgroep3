@@ -110,8 +110,13 @@
       {/if}
     {/each}
   </table>
+  <div class="line"></div>
+  <div class="invite-text-container" style="width: 60%; text-align: center; margin: 20px auto;">
+    <p>Wil je mensen uitnodigen om mee te eten? Klik op de onderstaande knop!</p>
+  </div>
+
   <div class='shareButton'>
-    <a class='share' href="/shareInvitation/{recipeId + 1}">Invite guests</a>
+    <a class='share' href="/shareInvitation/{recipeId + 1}">Nodig gasten uit</a>
   </div>
   <BottomBar />
 
@@ -176,5 +181,11 @@
     .share{
       margin:2px;
     }
+    .invite-text-container {
+    background-color: #fff; /* Set background color if needed */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
   }
 </style>

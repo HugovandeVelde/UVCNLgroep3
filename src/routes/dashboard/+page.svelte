@@ -23,13 +23,13 @@
 
         <!-- Welcome Back Section -->
         <div class="text-center text-lg mb-2.5">
-            <h1 class="sm:hidden">Welcome back</h1>
-            <h1 class="hidden sm:block">Welcome back!</h1>
+            <h1 class="sm:hidden">Welkom terug</h1>
+            <h1 class="hidden sm:block">Welkom terug!</h1>
         </div>
 
         <div class="w-full flex flex-col items-center">
             <h2 class="font-bold text-2xl text-center mb-5">
-                Recommended Recipes
+                Aanbevolen recepten
             </h2>
             <div class="flex justify-center w-full mb-5">
                 <!-- Box 1 -->
