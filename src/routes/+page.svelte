@@ -9,6 +9,9 @@
       <!-- Add the URL to your logo here -->
       <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto mix-blend-multiply">
     </div>
+    <p style="max-width: 80%; margin: 0 auto;" class="text-sm text-gray-800 my-5 text-center">
+      Ontdek gezonde recepten en kook samen met anderen! Wil jij ook meedoen? Registreer je dan snel!
+  </p>  
     <div class="flex gap-4 mb-8">
       <a href="http://localhost:5173/register" class="bg-[#008080] hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none">Register</a>
       <a href="http://localhost:5173/login" class="bg-[#228B22] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">Login</a>

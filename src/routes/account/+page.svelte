@@ -28,10 +28,10 @@
                 <!-- Account Information -->
                 <div class="mb-4">
                     <p>
-                        Username: <span class="font-medium" id="username">{username}</span>
+                        Gebruikersnaam: <span class="font-medium" id="username">{username}</span>
                     </p>
                     <p>
-                        Email: <span class="font-medium" id="email">{email}</span>
+                        E-mail: <span class="font-medium" id="email">{email}</span>
                     </p>
                 </div>
 
@@ -66,7 +66,7 @@
                         Feedback
                     </a>
                     <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded absolute top-4 right-4 z-10">
-                        Logout
+                        Log uit
                     </button>
                 </div>
             </div>

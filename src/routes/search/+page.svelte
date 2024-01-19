@@ -56,12 +56,12 @@
 
 <BackButton />
 <div class="search-page-header">
-    <h1>Search Page</h1>
+    <h1>Zoekpagina</h1>
 </div>      
 
 <div class="search-section">
     <div>
-        <label for="pricePerPortion">Price per Portion:</label>
+        <label for="pricePerPortion">Prijs per portie:</label>
         <input
             type="range"
             id="pricePerPortion"
@@ -75,7 +75,7 @@
     </div>
 
     <div>
-        <label for="countryOfOrigin">Origin of Recipe:</label>
+        <label for="countryOfOrigin">Herkomst van gerecht:</label>
         <div class="radio-options">
             <label for="Italian">
                 <input
@@ -86,7 +86,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> Italian
+                <span></span> Italië
             </label>
             <label for="French">
                 <input
@@ -97,7 +97,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> French
+                <span></span> Frankrijk
             </label>
             <label for="Asian">
                 <input
@@ -108,7 +108,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> Asian
+                <span></span> Azië
             </label>
             <label for="Spanish">
                 <input
@@ -119,7 +119,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> Spanish
+                <span></span> Spanje
             </label>
             <label for="American">
                 <input
@@ -130,7 +130,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> American
+                <span></span> Verenigde Staten
             </label>
             <label for="Dutch">
                 <input
@@ -141,14 +141,14 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> Dutch
+                <span></span> Nederland
             </label>
             <!-- Add more options here -->
         </div>
     </div>
 
     <div>
-        <label for="allergies">Allergies/Preferences:</label>
+        <label for="allergies">Allergiën/voorkeuren:</label>
         <div>
             <label for="vegan">
                 <input
@@ -170,7 +170,7 @@
                     value="gluten-free"
                     on:change={applyFilters}
                 />
-                Gluten-free
+                Gluten-vrij
             </label>
         </div>
         <div>
@@ -182,7 +182,7 @@
                     value="dairy-free"
                     on:change={applyFilters}
                 />
-                Dairy-free
+                Lactose-vrij
             </label>
         </div>
         <div>
@@ -194,7 +194,7 @@
                     value="nut-free"
                     on:change={applyFilters}
                 />
-                Nut-free
+                Noten-vrij
             </label>
         </div>
         <div>
@@ -206,7 +206,7 @@
                     value="wheat-free"
                     on:change={applyFilters}
                 />
-                Wheat-free
+                Tarwe-vrij
             </label>
         </div>
         <div>
@@ -218,7 +218,7 @@
                     value="soy-free"
                     on:change={applyFilters}
                 />
-                Soy-free
+                Soja-vrij
             </label>
         </div>
         <div>
@@ -230,12 +230,12 @@
                     value="fish-free"
                     on:change={applyFilters}
                 />
-                Fish-free
+                Vis-vrij
             </label>
         </div>
 
         <div>
-            <label for="kcal">Amount of kcal per 100g:</label>
+            <label for="kcal">Hoeveelheid kcal per 100g:</label>
             <input
                 type="range"
                 id="kcal"
@@ -249,7 +249,7 @@
         </div>
 
         <div>
-            <label for="fat">Amount of fat per 100g:</label>
+            <label for="fat">Hoeveelheid vet per 100g:</label>
             <input
                 type="range"
                 id="fat"
@@ -263,7 +263,7 @@
         </div>
 
         <div>
-            <label for="sugar">Amount of sugar per 100g:</label>
+            <label for="sugar">Hoeveelheid suiker per 100g:</label>
             <input
                 type="range"
                 id="sugar"
@@ -276,7 +276,7 @@
             <output>{filters.sugar}</output>
         </div>
 
-        <a href="recipeList" class="search-button">Search</a>
+        <a href="recipeList" class="search-button">Zoeken</a>
     </div>
 </div>
 

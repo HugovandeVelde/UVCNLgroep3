@@ -23,7 +23,7 @@
         />
     </div>
     <div class="header text-center mb-8">
-        <h1 class="text-4xl font-bold">Search Results:</h1>
+        <h1 class="text-4xl font-bold">Zoekresultaten:</h1>
     </div>
     <div class="flex flex-col items-center w-full mt-4 mx-auto">
         {#each recipes as recipe}

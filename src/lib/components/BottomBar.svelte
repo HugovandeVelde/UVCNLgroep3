@@ -10,15 +10,15 @@
     <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
       <button type="button" class="inline-flex flex-col items-center justify-center px-5 group">
         <HomeIcon />
-        <span class="text-sm text-black dark:text-white"><a href="/dashboard">Home</a></span>
+        <span class="text-sm text-black dark:text-white"><a href="/dashboard">Thuispagina</a></span>
       </button>
       <button type="button" class="inline-flex flex-col items-center justify-center px-5 group">
         <SearchIcon />
-        <span class="text-sm text-black dark:text-white"><a href="/search">Search</a></span>
+        <span class="text-sm text-black dark:text-white"><a href="/search">Zoeken</a></span>
       </button>
       <button type="button" class="inline-flex flex-col items-center justify-center px-5  group">
         <BookmarkIcon />
-        <span class="text-sm text-black dark:text-white"><a href="/saved">Saved</a></span>
+        <span class="text-sm text-black dark:text-white"><a href="/saved">Opgeslagen</a></span>
       </button>
       <button type="button" class="inline-flex flex-col items-center justify-center px-5  group">
         <AccountIcon />
