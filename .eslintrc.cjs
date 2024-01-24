@@ -1,6 +1,6 @@
 module.exports = {
     extends: [
-      'plugin:svelte/recommended'
+      'eslint:recommended',
     ],
     rules: {
       'svelte/no-at-html-tags': 'error', // Disallow the use of HTML tags in component templates
@@ -10,5 +10,7 @@ module.exports = {
       'no-multiple-empty-lines': ['error', { 'max': 2, 'maxEOF': 1, 'maxBOF': 0 }], // Limit the number of consecutive empty lines
       'no-var': 'error', // Disallow the use of var
       'prefer-const': 'error', // Prefer the use of const over let when variable reassignment is not needed
-    }
+      'import/no-unresolved': 'off',
+      'import/no-extraneous-dependencies': 'off',
+    },
   };
