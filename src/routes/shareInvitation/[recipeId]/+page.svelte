@@ -90,7 +90,7 @@
   }
   .link{
     color: rgb(83, 83, 83);
-    text-decoration: underline solid rgb(83, 83, 83);  
+    text-decoration: underline solid rgb(83, 83, 83);
   }
   .questions {
     margin-bottom: 10px;

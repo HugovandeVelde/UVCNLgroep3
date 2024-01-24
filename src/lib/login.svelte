@@ -1,29 +1,29 @@
 <script>
-  import { requestedData } from './index'
-  import { requestedAllData } from './index'
-  console.log(requestedData); 
-  console.log(requestedAllData); 
+  import { requestedData } from './index';
+  import { requestedAllData } from './index';
+  console.log(requestedData);
+  console.log(requestedAllData);
     let email = "";
     let password = "";
-  
+
     let isLoading = false;
-  
+
     let isSuccess = false;
-  
+
     export let submit;
-  
+
     let errors = {};
-  
+
     const handleSubmit = () => {
       errors = {};
-  
+
       if (email.length === 0) {
         errors.email = "Field should not be empty";
       }
       if (password.length === 0) {
         errors.password = "Field should not be empty";
       }
-  
+
       if (Object.keys(errors).length === 0) {
         isLoading = true;
         submit({ email, password })
@@ -38,7 +38,7 @@
       }
     };
   </script>
-  
+
   <style>
     form {
   background: #fff;
@@ -54,13 +54,13 @@
   margin-top: 100px;
 }
 
-  
+
     label {
       margin: 10px 0;
       align-self: flex-start;
       font-weight: 500;
     }
-  
+
     input {
       border: none;
       border-bottom: 1px solid #ccc;
@@ -68,12 +68,12 @@
       transition: all 300ms ease-in-out;
       width: 100%;
     }
-  
+
     input:focus {
       outline: 0;
       border-bottom: 1px solid #666;
     }
-  
+
     button {
       margin-top: 20px;
       background: black;
@@ -86,17 +86,17 @@
       cursor: pointer;
       transition: all 300ms ease-in-out;
     }
-  
+
     button:hover {
       transform: translateY(-2.5px);
       box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.58);
     }
-  
+
     h1 {
       margin: 10px 20px 30px 20px;
       font-size: 40px;
     }
-  
+
     .errors {
       list-style-type: none;
       padding: 10px;
@@ -105,13 +105,13 @@
       color: #0daa7b;
       background: rgba(51, 156, 13, 0.3);
     }
-  
+
     .success {
       font-size: 24px;
       text-align: center;
     }
   </style>
-  
+
   <form on:submit|preventDefault={handleSubmit}>
     {#if isSuccess}
       <div class="success">
@@ -121,17 +121,17 @@
       </div>
     {:else}
       <h1>👤</h1>
-  
+
       <label>Email</label>
       <input name="email" placeholder="name@example.com" bind:value={email} />
-  
+
       <label>Password</label>
       <input name="password" type="password" bind:value={password} />
-  
+
       <button type="submit">
         {#if isLoading}Logging in...{:else}Log in 🔒{/if}
       </button>
-  
+
       {#if Object.keys(errors).length > 0}
         <ul class="errors">
           {#each Object.keys(errors) as field}
