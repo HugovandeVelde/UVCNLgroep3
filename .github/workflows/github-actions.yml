@@ -1,27 +1,10 @@
 name: GitHub Actions
-
-on:
-  push
-
+on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm ci
-
-      # Add linting step here
-      - name: Install ESLint
-        run: npm install --save-dev eslint@latest eslint-plugin-svelte@latest svelte@latest
-
-      - name: Run ESLint
-        run: npx eslint .
+      - run: echo "🎉 Good job!"
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run lint
