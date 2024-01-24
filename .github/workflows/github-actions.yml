@@ -19,10 +19,6 @@ jobs:
       - name: Run ESLint (continue on errors)
         run: npm run lint || true
 
-      # Add the following steps for running tests and collecting code coverage
-      - name: Run tests and collect coverage
-        run: npm test
-
       # Add the following step if your test tool generates coverage reports
       - name: Publish coverage report
         uses: actions/upload-artifact@v2

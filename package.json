@@ -16,7 +16,9 @@
 
     "start": "export PORT=8080 && node ./build",
 
-    "lint": "eslint ."
+    "lint": "eslint .",
+
+    "test": "jest"
 
   },
 
