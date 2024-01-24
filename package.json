@@ -52,8 +52,6 @@
 
   "dependencies": {
 
-    "clipboard-copy": "^4.0.1",
-
     "dotenv": "^16.3.1",
 
     "sqlite": "^5.1.1",
