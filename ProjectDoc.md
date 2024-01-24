@@ -1,31 +1,31 @@
-## Project documentation
+# Project documentation
 
 
-# Objective:
+## Objective:
 Ons doel is om een app te ontwikkelen die ervoor zorgt dat studenten die op zichzelf wonen gezonder kunnen eten, nieuwe mensen kan leren kennen, met vrienden kan eten en recepten kan delen met medestudenten.
 
 
-# Key outcomes:
+## Key outcomes:
 Onze verwachtingen zijn dat deze app wel gebruikt zal worden door studenten als deze op de markt komt. Met deze app verwachten wij dat studenten op een goedkope manier gezonder gaan eten en nieuwe mensen leren kennen.
 
-# Hypotheses:
+## Hypotheses:
 Wij denken dat veel studenten die op zichzelf wonen ongezond leven en te dure producten komen in de supermarkten. Ook denken wij dat een groot aantal studenten zich vaak alleen voelt, en door onze app willen wij deze problemen aanpakken.
 
 
-## Project team:
-# Project manager:
+# Project team:
+## Project manager:
 - x
-# Team members:
+## Team members:
 - Hugo van de velde
 - Jesse Lokerse
 - Armin Elshout
 - Alwyn Voorhoeve
 - Arne Soyez
-# Stakeholder(s);
+## Stakeholder(s);
 - Rimmert Zelle
 
 
-Scope:
+## Scope:
 Must have:
 1. Als gebruiker wil ik kunnen inloggen of registreren in de app.
 2. Als gebruiker wil ik vrienden kunnen uitnodigen om te blijven eten.
@@ -47,12 +47,12 @@ Could have:
 4. Als gebruiker wil ik vrienden kunnen toevoegen.
 5. Als gebruiker wil ik vragen kunnen stellen of beantwoorden.
 
-Project timeline:
+## Project timeline:
 - Startdate: xx / 10 / 2023
 - Enddate: 22 / 01 / 2024
 
-  Tasks & deadlines
-  - Sprint 1: 
-  - Sprint 2: 
-  - Sprint 3: 
+## Tasks & deadlines
+- Sprint 1: 
+- Sprint 2: 
+- Sprint 3: 
 
