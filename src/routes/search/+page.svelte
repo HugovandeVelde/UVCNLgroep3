@@ -1,63 +1,63 @@
 <script>
     import BackButton from "../../lib/components/BackButton.svelte";
 
-    let filters = {
-        pricePerPortion: 3,
-        countryOfOrigin: "",
-        allergies: [],
-        kcal: 10,
-        fat: 10,
-        sugar: 10,
+    const filters = {
+      pricePerPortion: 3,
+      countryOfOrigin: "",
+      allergies: [],
+      kcal: 10,
+      fat: 10,
+      sugar: 10,
     };
 
     function applyFilters() {
-        filteredProducts = products.filter((product) => {
-            let match = true;
+      filteredProducts = products.filter((product) => {
+        let match = true;
 
-            if (
-                filters.pricePerPortion &&
+        if (
+          filters.pricePerPortion &&
                 product.pricePerPortion !== filters.pricePerPortion
-            ) {
-                match = false;
-            }
+        ) {
+          match = false;
+        }
 
-            if (
-                filters.countryOfOrigin &&
+        if (
+          filters.countryOfOrigin &&
                 product.countryOfOrigin !== filters.countryOfOrigin
-            ) {
-                match = false;
-            }
+        ) {
+          match = false;
+        }
 
-            if (filters.allergies.length > 0) {
-                for (let allergy of filters.allergies) {
-                    if (!product.allergies.includes(allergy)) {
-                        match = false;
-                        break;
-                    }
-                }
+        if (filters.allergies.length > 0) {
+          for (const allergy of filters.allergies) {
+            if (!product.allergies.includes(allergy)) {
+              match = false;
+              break;
             }
+          }
+        }
 
-            if (filters.kcal && product.kcal !== filters.kcal) {
-                match = false;
-            }
+        if (filters.kcal && product.kcal !== filters.kcal) {
+          match = false;
+        }
 
-            if (filters.fat && product.fat !== filters.fat) {
-                match = false;
-            }
+        if (filters.fat && product.fat !== filters.fat) {
+          match = false;
+        }
 
-            if (filters.sugar && product.sugar !== filters.sugar) {
-                match = false;
-            }
+        if (filters.sugar && product.sugar !== filters.sugar) {
+          match = false;
+        }
 
-            return match;
-        });
+        return match;
+      });
     }
 </script>
 
 <BackButton />
 <div class="search-page-header">
     <h1>Zoekpagina</h1>
-</div>      
+</div>
 
 <div class="search-section">
     <div>

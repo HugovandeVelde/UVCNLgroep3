@@ -3,9 +3,9 @@
     import BackButton from "../../lib/components/BackButton.svelte";
     import BottomBar from "../../lib/components/BottomBar.svelte";
 
-    let username = "User123";
-    let email = "user@example.com";
-    let userProfilePicture = "";
+    const username = "User123";
+    const email = "user@example.com";
+    const userProfilePicture = "";
 </script>
 
 <main>
