@@ -9,7 +9,7 @@ Ons doel is om een app te ontwikkelen die ervoor zorgt dat studenten die op zich
 Onze verwachtingen zijn dat deze app wel gebruikt zal worden door studenten als deze op de markt komt. Met deze app verwachten wij dat studenten op een goedkope manier gezonder gaan eten en nieuwe mensen leren kennen.
 
 ## Hypotheses:
-Wij denken dat veel studenten die op zichzelf wonen ongezond leven en te dure producten komen in de supermarkten. Ook denken wij dat een groot aantal studenten zich vaak alleen voelt, en door onze app willen wij deze problemen aanpakken.
+Wij denken dat veel studenten die op zichzelf wonen ongezond leven en te dure producten kopen in de supermarkten. Ook denken wij dat een groot aantal studenten zich vaak alleen voelt, en door onze app willen wij deze problemen aanpakken.
 
 
 # Project team:
@@ -48,11 +48,23 @@ Could have:
 5. Als gebruiker wil ik vragen kunnen stellen of beantwoorden.
 
 ## Project timeline:
-- Startdate: xx / 10 / 2023
+- Startdate: 13 / 10 / 2023
 - Enddate: 22 / 01 / 2024
 
 ## Tasks & deadlines
-- Sprint 1: 
-- Sprint 2: 
-- Sprint 3: 
+- Sprint 1:
+  - Gebruikers moeten kunnen inloggen of registreren ( 17 / 10 / 2023 )
+  - Gebruikers moeten gerechten kunnen aanmaken of kunnen zoeken ( 22 / 10 / 2023 )
+  - Gebruikers moeten kunnen filteren naar voedingswaarden ( 24 / 10 / 2023 )
+  - Gebruikers moeten de stappen en nodige ingredienten kunnen zien ( 24 / 10 / 2023 )
+- Sprint 2:
+  - Gebruikers moeten mensen kunnen uitnodigen via een link ( 01 / 11 / 2023 )
+  - Gebruikers kunnen recepten opslaan en reviewen ( 06 / 11 / 2023 )
+  - Gebruikers kunnen meldingen ontvangen binnen de app ( 15 / 11 / 2023 )
+- Sprint 3:
+  - Gebruikers kunnen hun geschiedenis zien ( 19 / 11 / 2023 )
+  - Gebruikers kunnen reviews van andere vrienden zien ( 21 / 11 / 2023 )
+  - Gebruikers kunnen recepten aanpassen of verwijderen ( 29 / 11 / 2023 )
+  - Gebruikers kunnen hun gegevens aanpassen ( 05 / 01 / 2024 )
+  - Gebruikers kunnen andere vrienden contacteren ( 12 / 01 / 2024 )
 
