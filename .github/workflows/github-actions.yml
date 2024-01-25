@@ -1,10 +1,21 @@
 name: GitHub Actions Demo
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 Good job!"
       - uses: actions/checkout@v3
-      - run: npm ci
-      - run: npm test
+
+      # Add this step to install Node.js dependencies
+      - name: Install Node.js Dependencies
+        run: npm ci
+
+      # Add this step to run Jest tests
+      - name: Run Jest Tests
+        run: npm test
