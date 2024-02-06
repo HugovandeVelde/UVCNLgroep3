@@ -1,7 +1,7 @@
 <script>
 
    import LoginForm from "../../lib/components/LoginForm.svelte";
-   
+
 </script>
 
 <div class="register flex flex-col justify-center items-center h-screen">

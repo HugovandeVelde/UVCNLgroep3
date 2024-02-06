@@ -3,13 +3,13 @@
   import RecipeJavascript from '../components/RecipeJavascript.svelte';
 import ExternalScript from '../components/RecipeJavascript.svelte';
 
-let steps = [
-    "Stap 1: Kook de spaghetti\nBreng een grote pan met water aan de kook.\nVoeg een snufje zout toe aan het kokende water.\nKook de spaghetti volgens de aanwijzingen op de verpakking totdat het beetgaar is.\nGiet de spaghetti af in een vergiet en zet deze opzij.",
-    "Stap 2: Rooster de pijnboompitten\nVerhit een koekenpan op middelhoog vuur.\nVoeg de pijnboompitten toe en rooster ze gedurende ongeveer 3 minuten, of tot ze goudbruin zijn.\nHaal de geroosterde pijnboompitten van het vuur en leg ze op een bord om af te koelen.",
-    "Stap 3: Maak de pesto\nPlaats de geroosterde pijnboompitten, geraspte kaas en knoflook in een keukenmachine.\nVoeg de verse basilicumblaadjes en olijfolie toe.\nPulseer de ingrediënten in de keukenmachine tot een smeuïge pesto ontstaat.\nBreng de pesto op smaak met peper en zout.",
-    "Stap 4: Combineer met de spaghetti\nSchep ongeveer 4 eetlepels van de pesto door de gekookte spaghetti en meng goed.",
-    "Stap 5: Serveer\nVerdeel de met pesto gegarneerde spaghetti over 6 borden.\nOptioneel: Garneer met extra kaas en basilicumblaadjes voor een aantrekkelijke presentatie.\nServeer de gerechten onmiddellijk. Eet smakelijk!"
-  ];
+const steps = [
+  "Stap 1: Kook de spaghetti\nBreng een grote pan met water aan de kook.\nVoeg een snufje zout toe aan het kokende water.\nKook de spaghetti volgens de aanwijzingen op de verpakking totdat het beetgaar is.\nGiet de spaghetti af in een vergiet en zet deze opzij.",
+  "Stap 2: Rooster de pijnboompitten\nVerhit een koekenpan op middelhoog vuur.\nVoeg de pijnboompitten toe en rooster ze gedurende ongeveer 3 minuten, of tot ze goudbruin zijn.\nHaal de geroosterde pijnboompitten van het vuur en leg ze op een bord om af te koelen.",
+  "Stap 3: Maak de pesto\nPlaats de geroosterde pijnboompitten, geraspte kaas en knoflook in een keukenmachine.\nVoeg de verse basilicumblaadjes en olijfolie toe.\nPulseer de ingrediënten in de keukenmachine tot een smeuïge pesto ontstaat.\nBreng de pesto op smaak met peper en zout.",
+  "Stap 4: Combineer met de spaghetti\nSchep ongeveer 4 eetlepels van de pesto door de gekookte spaghetti en meng goed.",
+  "Stap 5: Serveer\nVerdeel de met pesto gegarneerde spaghetti over 6 borden.\nOptioneel: Garneer met extra kaas en basilicumblaadjes voor een aantrekkelijke presentatie.\nServeer de gerechten onmiddellijk. Eet smakelijk!",
+];
 
   let currentStep = 0;
 
@@ -36,7 +36,7 @@ function navigateToAnotherPage() {
   /* Add TailwindCSS classes */
   /* For mobile screens */
   @media (max-width: 640px) {
-    
+
     .welcome-text {
       /* Style for the welcome text */
       font-size: 24px;
@@ -51,7 +51,7 @@ function navigateToAnotherPage() {
     }
     .box {
     /* Style for the boxes */
-   
+
     border: 2px solid #000; /* Border around the boxes */
     margin-bottom: 20px; /* Adjust space between boxes */
     border-radius: 8px; /* Rounded edges */
@@ -118,7 +118,7 @@ function navigateToAnotherPage() {
     width: 100%;
     font-style: normal;
     font-weight: 400;
-    
+
     line-height: 29px;
 
     color: #000000;
@@ -165,19 +165,18 @@ function navigateToAnotherPage() {
 
   <div class="bg-cover bg-center"
   style="background-image: url('./src/img/background.png')">
-    
-  
+
 
 <div class="mobile-bg w-screen h-screen">
   <h1 class="welcome-text">Pasta Pesto</h1>
-  
+
   <!-- Boxes container -->
   <div class="boxes-container">
     <!-- Box 1 -->
     <div class="box">
       <img src="./src/img/pastaPesto.png" alt="Image 1" />
-      
-     
+
+
     </div>
   </div>
 
@@ -192,7 +191,7 @@ function navigateToAnotherPage() {
             I love pasta. </p>
     </div>
 </div>
- 
+
      <!-- <div class="dish-description mb-8">
       <h2 class="text-xl font-semibold mb-2">Dish Description</h2>
       <p class="text-gray-700">{recipe.description}</p>
@@ -202,7 +201,6 @@ function navigateToAnotherPage() {
       <img src={recipe.posterImage} alt="Poster Image" class="rounded-full w-12 h-12 mr-4" />
       <div>
         <h3 class="text-lg font-semibold">{recipe.posterName}</h3> -->
-
 
 
   <h2>Needed ingredients:</h2>
@@ -245,7 +243,7 @@ function navigateToAnotherPage() {
  </div> -->
 
 
-</div>  
+</div>
 </div>
 <RecipeJavascript />
 </main>

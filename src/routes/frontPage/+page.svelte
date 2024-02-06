@@ -1,9 +1,9 @@
 <script>
     import BottomBar from '../../lib/components/BottomBar.svelte';
-    import { requestedRecipeData } from '../../lib/index'
-    import { requestedAllRecipeData } from '../../lib/index'
-  console.log(requestedRecipeData); 
-  console.log(requestedAllRecipeData); 
+    import { requestedRecipeData } from '../../lib/index';
+    import { requestedAllRecipeData } from '../../lib/index';
+  console.log(requestedRecipeData);
+  console.log(requestedAllRecipeData);
   </script>
     <main>
 <div class="mobile-bg w-screen h-screen">
@@ -53,8 +53,8 @@
     </div>
   </div>
   <div class="flex gap-4">
-    <a href="http://localhost:5173/register" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Register</a> 
-    <a href="http://localhost:5173/login" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Login</a> 
+    <a href="http://localhost:5173/register" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Register</a>
+    <a href="http://localhost:5173/login" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none inline-block">Login</a>
   </div>
 </div>
 
@@ -132,4 +132,3 @@
     <!-- Other components or content -->
     <BottomBar />
   </main>
-  

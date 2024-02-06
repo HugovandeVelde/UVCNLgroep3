@@ -1,9 +1,20 @@
-name: GitHub Actions Demo
-on: [push]
+name: GitHub Actions
+
+on:
+  push
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+
     steps:
       - run: echo "🎉 Good job!"
       - uses: actions/checkout@v3
       - run: npm ci
+
+      # Add linting step here
+      - name: Install ESLint
+        run: npm install eslint eslint-plugin-svelte3 --save-dev
+
+      - name: Run ESLint
+        run: npx eslint .
