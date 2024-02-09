@@ -3,7 +3,7 @@ let requestedAllSteps = '';
 
 async function fetchData() {
   try {
-    const response = await fetch("http://localhost:4006/steps");
+    const response = await fetch("http://localhost:4008/steps");
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

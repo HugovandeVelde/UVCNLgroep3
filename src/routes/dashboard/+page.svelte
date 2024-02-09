@@ -1,155 +1,65 @@
-<!--dashboard.svelte-->
+<!-- Import necessary components and libraries -->
 <script>
-    import BottomBar from "../../lib/components/BottomBar.svelte";
-    import { requestedAllData } from "../../lib/users";
-    import { requestedAllRecipeData } from "../../lib/index";
+  import AddRecipeButton from '../../lib/components/AddRecipeButton.svelte';
+  import Recipe from '../../lib/components/Recipe.svelte';
+  import Bottombar from '../../lib/components/Bottombar.svelte';
+  // Import Supabase client
+  import { createClient } from '@supabase/supabase-js';
+  // Import Svelte's onMount function
+  import { onMount } from 'svelte';
 
+  // Initialize the client with your Supabase project URL and API key
+  const supabase = createClient('https://hnerragxwflvikhfmyfi.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhuZXJyYWd4d2ZsdmlraGZteWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcyMTc2NzgsImV4cCI6MjAyMjc5MzY3OH0.yHK_nHSiw1An5GMEtvAoKncuL88zT2ktnVeI5WMBZJM');
+
+  // Define the table you want to query
+  const tableName = 'recipes';
+
+  // Define a writable store to hold the fetched data
+  import { writable } from 'svelte/store';
+  const recipes = writable([]);
+
+  // Fetch data from the table
+  async function fetchData() {
+      const { data, error } = await supabase.from(tableName).select('*');
+
+      if (error) {
+          console.error('Error fetching data:', error);
+          return;
+      }
+
+      console.log('Fetched data:', data);
+
+      // Set the fetched data to the recipes store
+      recipes.set(data);
+  }
+
+  // Call the fetchData function inside the onMount function
+  onMount(fetchData);
 </script>
 
-<main
-    class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
->
-    <div
-        class="flex flex-col items-center w-full max-w-screen-lg p-5 font-sans"
-    >
-        <!-- Logo Section -->
-        <div class="w-full mb-5 flex justify-center">
-            <img
-                src="/src/img/logo.png"
-                alt="Our Logo"
-                class="max-w-full h-auto mix-blend-multiply"
-            />
-        </div>
-
-        <!-- Welcome Back Section -->
-        <div class="text-center text-lg mb-2.5">
-            <h1 class="sm:hidden">Welkom terug</h1>
-            <h1 class="hidden sm:block">Welkom terug!</h1>
-        </div>
-
-        <div class="w-full flex flex-col items-center">
-            <h2 class="font-bold text-2xl text-center mb-5">
-                Aanbevolen recepten
-            </h2>
-            <div class="flex justify-center w-full mb-5">
-                <!-- Box 1 -->
-                <div class="w-1/3 p-2">
-                    <div
-                        class="flex flex-col items-center border-2 border-black rounded-lg overflow-hidden bg-[#50c878]"
-                    >
-                        <img
-                            src="./src/img/pastaPesto.png"
-                            alt="pastaPesto"
-                            class="w-32 h-24 object-cover"
-                        />
-                        <div class="border-b-2 border-black w-full"></div>
-                        <a
-                            href="/recipe/1"
-                            class="flex flex-row justify-center gap-5 mb-5"
-                        >
-                            <div class="p-2">
-                                <p>{requestedAllRecipeData[1].name}</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Box 2 -->
-                <div class="w-1/3 p-2">
-                    <div
-                        class="flex flex-col items-center border-2 border-black rounded-lg overflow-hidden bg-[#50c878]"
-                    >
-                        <img
-                            src="./src/img/kipTeriyaki.png"
-                            alt="KipTeriyaki"
-                            class="w-32 h-24 object-cover"
-                        />
-                        <div class="border-b-2 border-black w-full"></div>
-                        <a
-                            href="/recipe/2"
-                            class="flex flex-row justify-center gap-5 mb-5"
-                        >
-                            <div class="p-2">
-                                {requestedAllRecipeData[2].name}
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Box 3 -->
-                <div class="w-1/3 p-2">
-                    <div
-                        class="flex flex-col items-center border-2 border-black rounded-lg overflow-hidden bg-[#50c878]"
-                    >
-                        <img
-                            src="./src/img/shoarmaBowl.png"
-                            alt="shoarmaBowl"
-                            class="w-32 h-24 object-cover"
-                        />
-                        <div class="border-b-2 border-black w-full"></div>
-                        <a
-                            href="/recipe/3"
-                            class="flex flex-row justify-center gap-5 mb-5"
-                        >
-                            <div class="p-2">
-                                {requestedAllRecipeData[3].name}
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-full flex flex-col items-center">
-                <div class="flex justify-center w-full mb-5">
-                    <!-- Box 1 -->
-                    <div class="w-1/3 p-2">
-                        <div
-                            class="flex flex-col items-center border-2 border-black rounded-lg overflow-hidden bg-[#50c878]"
-                        >
-                            <img
-                                src="./src/img/kipTeriyaki.png"
-                                alt="kipTeriyaki2"
-                                class="w-32 h-24 object-cover"
-                            />
-                            <div class="border-b-2 border-black w-full"></div>
-                            <a
-                                href="/recipe/4"
-                                class="flex flex-row justify-center gap-5 mb-5"
-                            >
-                                <div class="p-2">
-                                    {requestedAllRecipeData[4].name}
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Box 2 -->
-                    <div class="w-1/3 p-2">
-                        <div
-                            class="flex flex-col items-center border-2 border-black rounded-lg overflow-hidden bg-[#50c878]"
-                        >
-                            <img
-                                src="./src/img/kipTeriyaki.png"
-                                alt="ja"
-                                class="w-32 h-24 object-cover"
-                            />
-                            <div class="border-b-2 border-black w-full"></div>
-                            <a
-                                href="/recipe/5"
-                                class="flex flex-row justify-center gap-5 mb-5"
-                            >
-                                <div class="p-2">
-                                    {requestedAllRecipeData[5].name}
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Other sections or components for your dashboard -->
+<!-- Main content -->
+<main class="bg-[#F0FFEA] min-h-screen pt-5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="w-full text-center mb-8">
+      <!-- Add your logo image here -->
+      <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto mix-blend-multiply">
     </div>
-
-    <!-- Bottom Bar -->
-    <BottomBar />
+    <!-- Section title -->
+    <h2 class="text-3xl font-bold text-center mb-8">Aanbevolen recepten</h2>
+    <!-- Box around recipe list -->
+    <div class="border border-gray-300 rounded-lg p-4">
+      <!-- Recipe list -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {#each $recipes as recipe}
+          <Recipe {recipe} />
+        {/each}
+      </div>
+    </div>
+    <!-- Add the AddRecipeButton component to allow users to add new recipes -->
+    <div class="flex justify-center mt-8">
+      <AddRecipeButton />
+    </div>
+  </div>
+  <!-- Include the Bottombar component -->
+  <Bottombar />
 </main>

@@ -1,191 +1,114 @@
-<!-- YourComponent.svelte -->
+<!-- RecipeDetails.svelte -->
 <script>
   import { page } from "$app/stores";
-  import { requestedAllData } from "../../../lib/users";
-  import { requestedAllRecipeData } from "../../../lib/index";
-  import { requestedAllIngredients } from "../../../lib/ingredients";
-  import { requestedAllSteps } from "../../../lib/steps";
+  import { onMount } from "svelte";
+  import { createClient } from '@supabase/supabase-js';
+  import { navigate } from "svelte-routing"; // Import the navigate function from svelte-routing
   import BottomBar from "../../../lib/components/BottomBar.svelte";
   import BackButton from "../../../lib/components/BackButton.svelte";
 
-  const recipeId = $page.params.recipeId - 1;
+  // Initialize the Supabase client
+  const supabase = createClient('https://hnerragxwflvikhfmyfi.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhuZXJyYWd4d2ZsdmlraGZteWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcyMTc2NzgsImV4cCI6MjAyMjc5MzY3OH0.yHK_nHSiw1An5GMEtvAoKncuL88zT2ktnVeI5WMBZJM');
+
   let recipe;
+
+  // Fetch recipe data from Supabase based on recipe ID
+  async function fetchRecipe() {
+    const recipeId = $page.params.recipeId;
+    const { data, error } = await supabase
+      .from('recipes')
+      .select('*')
+      .eq('id', recipeId)
+      .single();
+
+    if (error) {
+      console.error('Error fetching recipe:', error.message);
+    } else {
+      recipe = data;
+    }
+  }
+
+  async function deleteRecipe() {
+    try {
+      const confirmDelete = confirm("Are you sure you want to delete this recipe?");
+      if (confirmDelete) {
+        const recipeId = $page.params.recipeId;
+        const { error } = await supabase
+          .from('recipes')
+          .delete()
+          .eq('id', recipeId);
+
+        if (error) {
+          console.error('Error deleting recipe:', error.message);
+        } else {
+          // Optionally, you can navigate the user back to the recipe list or any other page
+          // For example, navigate('/recipes');
+        }
+      }
+    } catch (error) {
+      console.error('Error deleting recipe:', error.message);
+    }
+  }
+
+  function editRecipe() {
+    // Navigate to the edit recipe page with the recipe ID as a parameter
+    navigate(`/recipes/${$page.params.recipeId}/edit`);
+  }
+
+  // Fetch recipe data when the component is mounted
+  onMount(fetchRecipe);
 </script>
 
 <div class="bg-[#F0FFEA]">
   <BackButton />
 </div>
-<main
-  class="bg-[#F0FFEA] flex flex-col items-center justify-center min-h-screen pt-5"
->
-  <p class="invisible">{(recipe = requestedAllRecipeData[recipeId])}</p>
-  <table width="90%">
-    <tr>
-      <th colspan="5">
-        <h2>{recipe.name}</h2>
-      </th>
-    </tr>
-    <tr>
-      <td colspan="5" class="center">
-        {#each requestedAllData as user}
-          {#if user.id === recipe.creator_id}
-            <h5 class="mb-8">{user.name}</h5>
-          {/if}
-        {/each}
-      </td>
-    </tr>
-  </table>
-  <div class="line"></div>
-  <table>
-    <tr>
-      <td class="logoVak">
-        <img src="./../src/img/klok.png" alt="klok" class="logoImg" />
-      </td>
-      <td colspan="2">{recipe.prepTime}</td>
-    </tr>
-    <tr>
-      <td class="logoVak">
-        <img src="./../src/img/kcalLogo.png" alt="kcal" class="logoImg" />
-      </td>
-      <td colspan="2">{recipe.energy}</td>
-    </tr>
-    <tr>
-      <td class="logoVak">
-        <img src="./../src/img/olieLogo.png" alt="vet" class="logoImg" />
-      </td>
-      <td colspan="2">{recipe.fat} vetten</td>
-    </tr>
-    <tr>
-      <td class="logoVak">
-        <img src="./../src/img/eiwittenLogo.png" alt="eiwit" class="logoImg" />
-      </td>
-      <td colspan="2">{recipe.proteine} eiwitten</td>
-    </tr>
-    <tr>
-      <td class="logoVak">
-        <img src="./../src/img/tarweLogo.png" alt="tarwe" class="logoImg" />
-      </td>
-      <td colspan="2">{recipe.carbohydrate} koolhydraten</td>
-    </tr>
-    <tr>
-      <td class="logoVak">
-        <img src="./../src/img/mixerLogo.png" alt="mixer" class="logoImg" />
-      </td>
-      <td colspan="2">{recipe.kitchenware}</td>
-    </tr>
-  </table>
-  <div class="line"></div>
-  <table width="90%">
-    <th colspan="5">
-      <h2>Ingredienten:</h2>
-    </th>
-    {#each requestedAllIngredients as ingredient}
-      {#if ingredient.recipeId === recipe.id}
-        <tr>
-          <td class="hoeveelheidVak">
-            <p>{ingredient.Hoeveelheid}</p>
-          </td>
-          <td>
-            <p class="ml-2">{ingredient.ingredientName}</p>
-          </td>
-        </tr>
-      {/if}
-    {/each}
-  </table>
-  <div class="line"></div>
-  <table width="90%">
-    <th colspan="5">
-      <h2>Bereidingswijze:</h2>
-    </th>
-    {#each requestedAllSteps as stap}
-      {#if stap.recipeId === recipe.id}
-        <tr>
-          <td VALIGN="top">
-            <p>{stap.stepNr}</p>
-          </td>
-          <td>
-            <p>{stap.instructie}</p>
-          </td>
-        </tr>
-      {/if}
-    {/each}
-  </table>
-  <div class="line"></div>
-  <div class="invite-text-container" style="width: 60%; text-align: center; margin: 20px auto;">
-    <p>Wil je mensen uitnodigen om mee te eten? Klik op de onderstaande knop!</p>
-  </div>
 
-  <div class='shareButton'>
-    <a class='share' href="/shareInvitation/{recipeId + 1}">Nodig gasten uit</a>
-  </div>
+<main class="bg-[#F0FFEA] min-h-screen pt-5">
+  {#if recipe}
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="w-full text-center mb-8">
+        <img src="/src/img/logo.png" alt="Our Logo" class="max-w-full h-auto mix-blend-multiply">
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">{recipe.name}</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <p class="font-bold">Creator:</p>
+            <p>{recipe.creator}</p>
+            <p class="font-bold">Prep Time:</p>
+            <p>{recipe.prepTime}</p>
+            <p class="font-bold">Energy:</p>
+            <p>{recipe.energy}</p>
+            <p class="font-bold">Fat:</p>
+            <p>{recipe.fat}</p>
+            <p class="font-bold">Carbohydrate:</p>
+            <p>{recipe.carbohydrate}</p>
+            <p class="font-bold">Protein:</p>
+            <p>{recipe.protein}</p>
+            <p class="font-bold">Kitchenware:</p>
+            <p>{recipe.kitchenware}</p>
+            <p class="font-bold">Ingrediënten:</p>
+            <p>{recipe.ingrediënten}</p>
+            <p class="font-bold">Bereidingswijze:</p>
+            <p>{recipe.bereidingswijze}</p>
+          </div>
+        </div>
+        <div class="flex justify-between mt-8">
+          <button on:click={editRecipe} class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            Edit Recipe
+          </button>
+          <button on:click={deleteRecipe} class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+            Delete Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+  {:else}
+    <p>Loading...</p>
+  {/if}
   <BottomBar />
-
-
-  <br />
-  <br />
-  <br />
-  <br />
 </main>
 
 <style>
-  @media (max-width: 640px) {
-    main {
-      padding: 0px;
-    }
-    .hoeveelheidVak {
-      text-align: right;
-    }
-    .line {
-      height: 1px;
-      width: 95%;
-      margin-left: 2.5%;
-      margin-right: 2.5%;
-      border: 1px solid black;
-    }
-    h2 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    h5 {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    /* table,
-    th,
-    td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    } */
-    .logoImg {
-      height: 20px;
-      width: 20px;
-      display: block;
-      margin-left: 70%;
-      margin-right: auto;
-    }
-    table {
-      margin: 5%;
-    }
-    .logoVak,
-    .hoeveelheidVak {
-      width: 30%;
-    }
-    .center {
-      text-align: center;
-    }
-    .shareButton {
-      background-color: rgb(34 197 94);
-      border: solid black 1px;
-      border-radius: 5px;
-    }
-    .share{
-      margin:2px;
-    }
-    .invite-text-container {
-    background-color: #fff; /* Set background color if needed */
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  }
+  /* Your styles here */
 </style>

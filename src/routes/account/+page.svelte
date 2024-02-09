@@ -1,7 +1,6 @@
 <!-- Account.svelte -->
 <script>
     import BackButton from "../../lib/components/BackButton.svelte";
-    import BottomBar from "../../lib/components/BottomBar.svelte";
 
     let username = "User123";
     let email = "user@example.com";
@@ -72,8 +71,6 @@
             </div>
         </div>
     </div>
-
-    <BottomBar profilePictureUrl={userProfilePicture} />
 </main>
 
 <style>
