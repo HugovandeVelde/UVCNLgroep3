@@ -127,23 +127,32 @@
         <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md">Post Review</button>
       </form>
     </div>
-  
+    <br>
     {#each reviews as Review }
       <!-- Display reviews based on reviewId -->
-      <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-md border-black mt-4">
-        <p class="text-2xl font-bold mb-4">{Review.name}</p>
+      <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-md border-black">
+        <p class="text-2xl font-bold">{Review.name}</p>
         <p class="mb-2">Review from: {users[currentUser].name}</p>
         <p class="mb-2">Omschrijving: {Review.description}</p>
         <p class="mb-6">Score: {Review.score}</p>
         <button on:click={() => deleteReview(Review.id)} class="bg-red-500 text-white py-2 px-4 rounded-md">Delete Review</button>
       </div>
+      <br>
     {/each}
   </main>
+  <br>
+  <div class="bottombar">
   <BottomBar />
+</div>"
 <style>
   @media (max-width: 640px) {
     main {
       padding: 0px;
+    }
+    .bottombar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
     .max-w-md {
       width: 90%;
@@ -162,48 +171,6 @@
       margin-left: 2.5%;
       margin-right: 2.5%;
       border: 1px solid black;
-    }
-    h2 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    h5 {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .logoImg {
-      height: 20px;
-      width: 20px;
-      display: block;
-      margin-left: 70%;
-      margin-right: auto;
-    }
-    table {
-      margin: 5%;
-      width: 90%;
-    }
-    .logoVak,
-    .hoeveelheidVak {
-      width: 30%;
-    }
-    .center {
-      text-align: center;
-    }
-    .shareButton,
-    .reviewButton {
-      background-color: rgb(34 197 94);
-      border: solid black 1px;
-      border-radius: 5px;
-      margin: 5px;
-    }
-    .invite-text-container {
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 60%;
-      text-align: center;
-      margin: 20px auto;
     }
   }
 </style>
