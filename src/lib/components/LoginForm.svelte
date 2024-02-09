@@ -55,7 +55,7 @@
   
 async function postData(data) {
   try {
-    const response = await fetch(`http://localhost:4000/users`, {
+    const response = await fetch(`http://localhost:4006/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

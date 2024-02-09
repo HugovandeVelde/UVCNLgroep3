@@ -52,13 +52,13 @@
                     </a>
 
                     <!-- Box 4: Help -->
-                    <a href="#" class="bg-gray-200 p-4 rounded-md text-center block">
-                        Help
+                    <a href="/vrienden" class="bg-gray-200 p-4 rounded-md text-center block">
+                        Mijn vrienden
                     </a>
 
                     <!-- Box 5: FAQ -->
                     <a href="#" class="bg-gray-200 p-4 rounded-md text-center block">
-                        FAQ
+                        Vrienden zoekken
                     </a>
 
                     <!-- Box 6: Feedback -->
