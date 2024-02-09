@@ -118,6 +118,16 @@
   <div class='shareButton'>
     <a class='share' href="/shareInvitation/{recipeId + 1}">Nodig gasten uit</a>
   </div>
+
+  <div class="line"></div>
+  
+  <div class="invite-text-container" style="width: 60%; text-align: center; margin: 20px auto;">
+    <p>Wil jij je mening laten weten over deze kok? Of wil je weten wat andere mensen te zeggen hebben? Klik dan op de onderstaande knop!</p>
+  </div>
+
+  <div class='reviewButton'>
+    <a class='share' href="/review/{recipeId + 1}">Ga naar de reviewpagina!</a>
+  </div>
   <BottomBar />
 
 
@@ -174,6 +184,11 @@
       text-align: center;
     }
     .shareButton {
+      background-color: rgb(34 197 94);
+      border: solid black 1px;
+      border-radius: 5px;
+    }
+    .reviewButton {
       background-color: rgb(34 197 94);
       border: solid black 1px;
       border-radius: 5px;
