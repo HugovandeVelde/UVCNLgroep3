@@ -7,7 +7,7 @@
   const supabaseUrl = "https://ejgeorrwvtzqlbaxbnut.supabase.co";
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqZ2VvcnJ3dnR6cWxiYXhibnV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc0NzAwNjIsImV4cCI6MjAyMzA0NjA2Mn0.iB81lYinhUuK8cGwWVFIoI3-26qiuAf6TLpX5T3r318";
   const supabase = createClient(supabaseUrl, supabaseKey);
-  let currentUser = 5;
+  let currentUser = 2;
   let friends = "";
   let Friends = "";
 
