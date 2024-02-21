@@ -12,8 +12,8 @@ async function fetchData() {
     data = await response.json();
 
     // Verwerk de ontvangen data
-    getAllIngredients()
-     
+    getAllIngredients();
+
   } catch (error) {
     // Handel fouten af
     console.error("Fetch error:", error);

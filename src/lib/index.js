@@ -1,6 +1,6 @@
 let data = "niks";
-let requestedData = "";
-let requestedAllData = "";
+const requestedData = "";
+const requestedAllData = "";
 let requestedRecipeData = "";
 let requestedAllRecipeData = "";
 

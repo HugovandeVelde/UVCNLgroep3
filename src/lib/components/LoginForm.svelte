@@ -1,19 +1,19 @@
 <script>
-    import {requestedAllData} from '../users'
-    let form = {
+    import {requestedAllData} from '../users';
+    const form = {
       error: null,
       name: "",
       email: "",
       password: "",
-      passwordConfirm: ""
+      passwordConfirm: "",
     };
     async function handleSubmit(event) {
   event.preventDefault();
 
   if (form.password !== form.passwordConfirm) {
-    form.error = "Passwords don't match"; 
-    console.log(form.password + 'hi' + form.passwordConfirm)
-    
+    form.error = "Passwords don't match";
+    console.log(form.password + 'hi' + form.passwordConfirm);
+
   }
   if (form.password === form.passwordConfirm) {
     const newUser = {
@@ -21,8 +21,8 @@
       email: form.email,
       password: form.password,
     };
-    console.log(newUser)
-    {window.location.replace("http://localhost:5173/dashboard")}
+    console.log(newUser);
+    {window.location.replace("http://localhost:5173/dashboard");}
 
     try {
       // Post the new user data to the backend
@@ -52,7 +52,7 @@
   }
 }
 
-  
+
 async function postData(data) {
   try {
     const response = await fetch(`http://localhost:4000/users`, {

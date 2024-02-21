@@ -1,13 +1,13 @@
 <script>
     import { requestedAllData } from '../../lib/users';
-    let knowsEmail = false
-    let form = { error: null, email: "", password: "" };
+    const knowsEmail = false;
+    const form = { error: null, email: "", password: "" };
     let isSubmitted = false;
-    console.log(requestedAllData + 'hi')
+    console.log(requestedAllData + 'hi');
     function handleSubmit(event) {
         event.preventDefault();
         isSubmitted = true;
-        console.log('test')
+        console.log('test');
     }
 </script>
 
@@ -39,8 +39,8 @@
                     {window.location.replace("http://localhost:5173/dashboard")}
             {/if}
 
-        {/each}     
+        {/each}
 
     {/if}
-    
-</div>  
+
+</div>

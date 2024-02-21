@@ -8,8 +8,8 @@ export const actions = {
         // form validation
         if (password1 != password2) {
             return fail(422, {
-                error: 'Passwords do not match'
+                error: 'Passwords do not match',
             });
         }
-    }
+    },
 };

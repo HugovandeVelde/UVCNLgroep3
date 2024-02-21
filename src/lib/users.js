@@ -1,8 +1,8 @@
 let data = "niks";
 let requestedData = "";
 let requestedAllData = "";
-let requestedRecipeData = "";
-let requestedAllRecipeData = "";
+const requestedRecipeData = "";
+const requestedAllRecipeData = "";
 async function fetchData(id) {
   try {
     const response = await fetch("http://localhost:4008/users");
@@ -17,7 +17,7 @@ async function fetchData(id) {
     if(id !=='all'){
         getUserData(id-1);
     } else {
-         getAllUserData()
+         getAllUserData();
     }
   } catch (error) {
     // Handel fouten af
@@ -33,7 +33,7 @@ function getUserData(id) {
 fetchData('all');
 function getAllUserData(){
   requestedAllData = data ;
-    console.log(requestedAllData)
+    console.log(requestedAllData);
 }
 
 // Functie om data naar de backend te posten
@@ -67,6 +67,6 @@ async function postData(table, newData) {
 // };
 // Roep de functie aan om data te posten
 // postData('users', newUser);
-console.log('after postData')
+console.log('after postData');
 export{ requestedData };
 export{ requestedAllData };

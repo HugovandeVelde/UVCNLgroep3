@@ -1,4 +1,4 @@
-import { getDatabase } from '../src/lib/server/databse.js';
+const { getDatabase } = require('../src/lib/server/databse.js');
 
 async function run() {
     const db = await getDatabase();

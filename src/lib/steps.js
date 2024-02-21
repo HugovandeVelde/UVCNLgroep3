@@ -12,8 +12,8 @@ async function fetchData() {
     data = await response.json();
 
     // Verwerk de ontvangen data
-    getAllSteps()
-  
+    getAllSteps();
+
   } catch (error) {
     // Handel fouten af
     console.error("Fetch error:", error);
@@ -24,5 +24,5 @@ fetchData();
 function getAllSteps(){
   requestedAllSteps = data ;
 }
-console.log(requestedAllSteps)
+console.log(requestedAllSteps);
 export{ requestedAllSteps };
