@@ -97,7 +97,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> Frankrijk
+                <span></span> Frankrijk 
             </label>
             <label for="Asian">
                 <input
