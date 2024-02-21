@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
     import BackButton from "../../lib/components/BackButton.svelte";
 
     const filters = {
@@ -97,7 +97,7 @@
                     bind:group={filters.countryOfOrigin}
                     on:change={applyFilters}
                 />
-                <span></span> Frankrijk
+                <span></span> Frankrijk 
             </label>
             <label for="Asian">
                 <input
@@ -283,4 +283,4 @@
 <style>
     /* Your component-specific styles here */
     @import "./style.css";
-</style> -->
+</style>
