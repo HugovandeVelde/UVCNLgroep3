@@ -1,18 +1,18 @@
 <script>
   // Import any necessary modules here
-  let form = {
+  const form = {
     error: null,
     name: "",
     email: "",
     password: "",
-    passwordConfirm: ""
+    passwordConfirm: "",
   };
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     if (form.password !== form.passwordConfirm) {
-      form.error = "Passwords don't match"; 
+      form.error = "Passwords don't match";
     } else {
       const newUser = {
         name: form.name,
@@ -45,7 +45,7 @@
     }
   }
 
-  
+
 async function postData(data) {
   try {
     const response = await fetch(`http://localhost:4000/users`, {
