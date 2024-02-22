@@ -11,6 +11,7 @@ jobs:
       - run: echo "🎉 Good job!"
       - uses: actions/checkout@v3
       - run: npm ci
+      - run: npm test
 
       # Add linting step here
       - name: Install ESLint
